@@ -1,6 +1,6 @@
 flows:
-  1214f2aa-8a16-48e7-b5a5-a3b7fb3cdc83: {ver: 2, file: Local_explore_flow.snapshot,
-    comments: Timesheet log renamed, author: anonymous, created: 1592056131331, flowName: Local
+  1214f2aa-8a16-48e7-b5a5-a3b7fb3cdc83: {ver: 3, file: Local_explore_flow.snapshot,
+    comments: Removed FTP, author: anonymous, created: 1592057084973, flowName: Local
       explore flow, flowDesc: ''}
 layoutVer: 1
 bucketId: c91a0077-beb2-4583-a64a-feaef7e78358
