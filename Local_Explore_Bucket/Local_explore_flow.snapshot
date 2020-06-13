@@ -82,7 +82,7 @@
             "comments" : "",
             "groupId" : "448c9701-0cc4-3ffc-baa2-b4dc2e12c8e9",
             "id" : "b6eff9fd-a27b-38d4-a5b6-a1eadb7f641c",
-            "name" : "LogMessage",
+            "name" : "TimesheetLogMessage",
             "type" : "PROCESSOR"
           },
           "flowFileExpiration" : "0 sec",
@@ -3420,7 +3420,7 @@
           "executionNode" : "ALL",
           "groupIdentifier" : "448c9701-0cc4-3ffc-baa2-b4dc2e12c8e9",
           "identifier" : "b6eff9fd-a27b-38d4-a5b6-a1eadb7f641c",
-          "name" : "LogMessage",
+          "name" : "TimesheetLogMessage",
           "penaltyDuration" : "30 sec",
           "position" : {
             "x" : -240.0,
