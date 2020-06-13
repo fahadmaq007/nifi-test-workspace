@@ -191,7 +191,7 @@
           "parameterContextName" : "Local Context",
           "position" : {
             "x" : -264.0,
-            "y" : 824.0
+            "y" : 880.0
           },
           "processGroups" : [ {
             "comments" : "",
@@ -1844,8 +1844,8 @@
           "outputPorts" : [ ],
           "parameterContextName" : "Local Context",
           "position" : {
-            "x" : 32.0,
-            "y" : 616.0
+            "x" : 200.0,
+            "y" : 640.0
           },
           "processGroups" : [ ],
           "processors" : [ {
@@ -2465,8 +2465,8 @@
           "outputPorts" : [ ],
           "parameterContextName" : "Local Context",
           "position" : {
-            "x" : 240.0,
-            "y" : 816.0
+            "x" : 624.0,
+            "y" : 872.0
           },
           "processGroups" : [ ],
           "processors" : [ {
@@ -3423,8 +3423,8 @@
           "name" : "TimesheetLogMessage",
           "penaltyDuration" : "30 sec",
           "position" : {
-            "x" : -240.0,
-            "y" : 168.0
+            "x" : -848.0,
+            "y" : 160.0
           },
           "properties" : {
             "log-level" : "info"
@@ -3578,8 +3578,8 @@
           "name" : "ConsumerTimesheetKafka_2_0",
           "penaltyDuration" : "30 sec",
           "position" : {
-            "x" : -240.0,
-            "y" : -96.0
+            "x" : -848.0,
+            "y" : -104.0
           },
           "properties" : {
             "header-name-regex" : "(kafka.*)",
