@@ -1,6 +1,6 @@
 flows:
-  cbed1589-7e92-4170-bb78-73577e66eacb: {ver: 3, file: Local_explore_group.snapshot,
-    comments: Removed test changes, author: anonymous, created: 1592027337762, flowName: Local
+  cbed1589-7e92-4170-bb78-73577e66eacb: {ver: 4, file: Local_explore_group.snapshot,
+    comments: Renamed Kafka Consumer, author: anonymous, created: 1592039694395, flowName: Local
       explore group, flowDesc: ''}
 layoutVer: 1
 bucketId: 23f5e1df-72e3-4b78-9eab-b40b93dc06b3

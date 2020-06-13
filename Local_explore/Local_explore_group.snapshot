@@ -99,7 +99,7 @@
             "comments" : "",
             "groupId" : "448c9701-0cc4-3ffc-baa2-b4dc2e12c8e9",
             "id" : "e19789e2-a8f0-3f37-9106-4b747046e044",
-            "name" : "ConsumeTsKafka_2_0",
+            "name" : "ConsumeTimesheetKafka_2_0",
             "type" : "PROCESSOR"
           },
           "zIndex" : 0
@@ -3575,7 +3575,7 @@
           "executionNode" : "ALL",
           "groupIdentifier" : "448c9701-0cc4-3ffc-baa2-b4dc2e12c8e9",
           "identifier" : "e19789e2-a8f0-3f37-9106-4b747046e044",
-          "name" : "ConsumeTsKafka_2_0",
+          "name" : "ConsumeTimesheetKafka_2_0",
           "penaltyDuration" : "30 sec",
           "position" : {
             "x" : -240.0,
