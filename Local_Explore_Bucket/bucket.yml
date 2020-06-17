@@ -2,8 +2,8 @@ flows:
   6ce0d0a0-dae1-412c-97f0-e6082eb31732: {ver: 2, file: Local_explore_group.snapshot,
     comments: added plant grn data to cmf-raw-data, author: anonymous, created: 1592388348677,
     flowName: Local explore group, flowDesc: ''}
-  1214f2aa-8a16-48e7-b5a5-a3b7fb3cdc83: {ver: 4, file: Local_explore_flow.snapshot,
-    comments: Rearrangements, author: anonymous, created: 1592057173752, flowName: Local
-      explore flow, flowDesc: ''}
+  1214f2aa-8a16-48e7-b5a5-a3b7fb3cdc83: {ver: 5, file: Local_explore_flow.snapshot,
+    comments: added plant grn data to cmf-data-raw, author: anonymous, created: 1592388390368,
+    flowName: Local explore flow, flowDesc: ''}
 layoutVer: 1
 bucketId: c91a0077-beb2-4583-a64a-feaef7e78358

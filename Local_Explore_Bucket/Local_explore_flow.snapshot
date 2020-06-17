@@ -173,8 +173,8 @@
         "outputPorts" : [ ],
         "parameterContextName" : "Local Context",
         "position" : {
-          "x" : -136.0,
-          "y" : 432.0
+          "x" : -1664.0,
+          "y" : 464.0
         },
         "processGroups" : [ {
           "comments" : "",
@@ -283,6 +283,66 @@
                 "groupId" : "00027d6b-b514-3954-9705-5d94b6ee2ed4",
                 "id" : "2f085b55-52ee-3fe8-a234-dad552728195",
                 "name" : "PublishKafka_2_0",
+                "type" : "PROCESSOR"
+              },
+              "zIndex" : 0
+            }, {
+              "backPressureDataSizeThreshold" : "1 GB",
+              "backPressureObjectThreshold" : 10000,
+              "bends" : [ ],
+              "componentType" : "CONNECTION",
+              "destination" : {
+                "comments" : "",
+                "groupId" : "00027d6b-b514-3954-9705-5d94b6ee2ed4",
+                "id" : "7a2eb569-2fe5-31e9-815d-4a11e381d957",
+                "name" : "PutCouchdbKey",
+                "type" : "PROCESSOR"
+              },
+              "flowFileExpiration" : "0 sec",
+              "groupIdentifier" : "00027d6b-b514-3954-9705-5d94b6ee2ed4",
+              "identifier" : "e71a6f59-8bbe-3639-b0bd-30baf41832b9",
+              "labelIndex" : 1,
+              "loadBalanceCompression" : "DO_NOT_COMPRESS",
+              "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+              "name" : "",
+              "partitioningAttribute" : "",
+              "prioritizers" : [ ],
+              "selectedRelationships" : [ "matched" ],
+              "source" : {
+                "comments" : "",
+                "groupId" : "00027d6b-b514-3954-9705-5d94b6ee2ed4",
+                "id" : "11c8d0c8-14b6-3f51-a416-ca0df9006274",
+                "name" : "EvaluateJsonPath",
+                "type" : "PROCESSOR"
+              },
+              "zIndex" : 0
+            }, {
+              "backPressureDataSizeThreshold" : "1 GB",
+              "backPressureObjectThreshold" : 10000,
+              "bends" : [ ],
+              "componentType" : "CONNECTION",
+              "destination" : {
+                "comments" : "",
+                "groupId" : "00027d6b-b514-3954-9705-5d94b6ee2ed4",
+                "id" : "21bc268b-9c30-39c4-8040-0b5d2d2b44d3",
+                "name" : "LogMessage",
+                "type" : "PROCESSOR"
+              },
+              "flowFileExpiration" : "0 sec",
+              "groupIdentifier" : "00027d6b-b514-3954-9705-5d94b6ee2ed4",
+              "identifier" : "7852e34e-531a-372f-9d95-e45cfa827470",
+              "labelIndex" : 1,
+              "loadBalanceCompression" : "DO_NOT_COMPRESS",
+              "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+              "name" : "",
+              "partitioningAttribute" : "",
+              "prioritizers" : [ ],
+              "selectedRelationships" : [ "success" ],
+              "source" : {
+                "comments" : "",
+                "groupId" : "00027d6b-b514-3954-9705-5d94b6ee2ed4",
+                "id" : "7a2eb569-2fe5-31e9-815d-4a11e381d957",
+                "name" : "PutCouchdbKey",
                 "type" : "PROCESSOR"
               },
               "zIndex" : 0
@@ -731,9 +791,137 @@
               "style" : { },
               "type" : "org.apache.nifi.processors.standard.LogMessage",
               "yieldDuration" : "1 sec"
+            }, {
+              "autoTerminatedRelationships" : [ "failure", "retry" ],
+              "bulletinLevel" : "WARN",
+              "bundle" : {
+                "artifact" : "nifi-couchdb-nar",
+                "group" : "com.maqs.nifi",
+                "version" : "1.0"
+              },
+              "comments" : "",
+              "componentType" : "PROCESSOR",
+              "concurrentlySchedulableTaskCount" : 1,
+              "executionNode" : "ALL",
+              "groupIdentifier" : "00027d6b-b514-3954-9705-5d94b6ee2ed4",
+              "identifier" : "7a2eb569-2fe5-31e9-815d-4a11e381d957",
+              "name" : "PutCouchdbKey",
+              "penaltyDuration" : "30 sec",
+              "position" : {
+                "x" : 832.0,
+                "y" : 328.0
+              },
+              "properties" : {
+                "cluster-controller-service" : "34b321ff-0b77-3d67-9d8e-0aa4ecf7775f",
+                "database-name" : "cmf_${kafka_receivedMessageKey}"
+              },
+              "propertyDescriptors" : {
+                "cluster-controller-service" : {
+                  "displayName" : "Couchdb Cluster Controller Service",
+                  "identifiesControllerService" : true,
+                  "name" : "cluster-controller-service",
+                  "sensitive" : false
+                },
+                "database-name" : {
+                  "displayName" : "Database Name",
+                  "identifiesControllerService" : false,
+                  "name" : "database-name",
+                  "sensitive" : false
+                },
+                "document-id" : {
+                  "displayName" : "Document Id",
+                  "identifiesControllerService" : false,
+                  "name" : "document-id",
+                  "sensitive" : false
+                }
+              },
+              "runDurationMillis" : 0,
+              "scheduledState" : "ENABLED",
+              "schedulingPeriod" : "0 sec",
+              "schedulingStrategy" : "TIMER_DRIVEN",
+              "style" : { },
+              "type" : "com.maqs.nifi.processors.couchdb.PutCouchdbKey",
+              "yieldDuration" : "1 sec"
+            }, {
+              "autoTerminatedRelationships" : [ "success" ],
+              "bulletinLevel" : "WARN",
+              "bundle" : {
+                "artifact" : "nifi-standard-nar",
+                "group" : "org.apache.nifi",
+                "version" : "1.11.4"
+              },
+              "comments" : "",
+              "componentType" : "PROCESSOR",
+              "concurrentlySchedulableTaskCount" : 1,
+              "executionNode" : "ALL",
+              "groupIdentifier" : "00027d6b-b514-3954-9705-5d94b6ee2ed4",
+              "identifier" : "21bc268b-9c30-39c4-8040-0b5d2d2b44d3",
+              "name" : "LogMessage",
+              "penaltyDuration" : "30 sec",
+              "position" : {
+                "x" : 840.0,
+                "y" : 536.0
+              },
+              "properties" : {
+                "log-level" : "info"
+              },
+              "propertyDescriptors" : {
+                "log-message" : {
+                  "displayName" : "Log message",
+                  "identifiesControllerService" : false,
+                  "name" : "log-message",
+                  "sensitive" : false
+                },
+                "log-level" : {
+                  "displayName" : "Log Level",
+                  "identifiesControllerService" : false,
+                  "name" : "log-level",
+                  "sensitive" : false
+                },
+                "log-prefix" : {
+                  "displayName" : "Log prefix",
+                  "identifiesControllerService" : false,
+                  "name" : "log-prefix",
+                  "sensitive" : false
+                }
+              },
+              "runDurationMillis" : 0,
+              "scheduledState" : "ENABLED",
+              "schedulingPeriod" : "0 sec",
+              "schedulingStrategy" : "TIMER_DRIVEN",
+              "style" : { },
+              "type" : "org.apache.nifi.processors.standard.LogMessage",
+              "yieldDuration" : "1 sec"
             } ],
             "remoteProcessGroups" : [ ],
             "variables" : { }
+          }, {
+            "comments" : "",
+            "componentType" : "PROCESS_GROUP",
+            "connections" : [ ],
+            "controllerServices" : [ ],
+            "funnels" : [ ],
+            "groupIdentifier" : "ea34280d-9df8-3fc4-9f4a-ee9e3bcd8397",
+            "identifier" : "955dd9db-0651-3968-ba05-f87df3df164e",
+            "inputPorts" : [ ],
+            "labels" : [ ],
+            "name" : "GeneratePlantGrnDataToRawTopic",
+            "outputPorts" : [ ],
+            "parameterContextName" : "Local Context",
+            "position" : {
+              "x" : 608.0,
+              "y" : 8.0
+            },
+            "processGroups" : [ ],
+            "processors" : [ ],
+            "remoteProcessGroups" : [ ],
+            "variables" : { },
+            "versionedFlowCoordinates" : {
+              "bucketId" : "c91a0077-beb2-4583-a64a-feaef7e78358",
+              "flowId" : "6ce0d0a0-dae1-412c-97f0-e6082eb31732",
+              "registryUrl" : "http://maqshost:19090",
+              "version" : 2
+            }
           } ],
           "processors" : [ ],
           "remoteProcessGroups" : [ ],
@@ -3812,6 +4000,11 @@
             "name" : "URL",
             "sensitive" : false,
             "value" : "https://maqshost/v3/api/admin/email/${employeeCode}"
+          }, {
+            "description" : "",
+            "name" : "topic.cmf_data_raw",
+            "sensitive" : false,
+            "value" : "cmf-data-out-raw"
           }, {
             "description" : "",
             "name" : "test-files-dir",
