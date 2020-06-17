@@ -1,4 +1,7 @@
 flows:
+  6ce0d0a0-dae1-412c-97f0-e6082eb31732: {ver: 1, file: Local_explore_group.snapshot,
+    comments: '', author: anonymous, created: 1592388300337, flowName: Local explore
+      group, flowDesc: ''}
   1214f2aa-8a16-48e7-b5a5-a3b7fb3cdc83: {ver: 4, file: Local_explore_flow.snapshot,
     comments: Rearrangements, author: anonymous, created: 1592057173752, flowName: Local
       explore flow, flowDesc: ''}
