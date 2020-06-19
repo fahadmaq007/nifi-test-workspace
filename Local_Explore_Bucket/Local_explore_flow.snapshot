@@ -813,7 +813,8 @@
               },
               "properties" : {
                 "cluster-controller-service" : "34b321ff-0b77-3d67-9d8e-0aa4ecf7775f",
-                "database-name" : "cmf_${kafka_receivedMessageKey}"
+                "database-name" : "cmf_${kafka_receivedMessageKey}",
+                "partial-update" : "true"
               },
               "propertyDescriptors" : {
                 "cluster-controller-service" : {
@@ -826,6 +827,12 @@
                   "displayName" : "Database Name",
                   "identifiesControllerService" : false,
                   "name" : "database-name",
+                  "sensitive" : false
+                },
+                "partial-update" : {
+                  "displayName" : "Partial Update",
+                  "identifiesControllerService" : false,
+                  "name" : "partial-update",
                   "sensitive" : false
                 },
                 "document-id" : {
@@ -898,7 +905,157 @@
           }, {
             "comments" : "",
             "componentType" : "PROCESS_GROUP",
-            "connections" : [ ],
+            "connections" : [ {
+              "backPressureDataSizeThreshold" : "1 GB",
+              "backPressureObjectThreshold" : 10000,
+              "bends" : [ ],
+              "componentType" : "CONNECTION",
+              "destination" : {
+                "comments" : "",
+                "groupId" : "955dd9db-0651-3968-ba05-f87df3df164e",
+                "id" : "fc5680dd-bc77-3926-a7e8-a75ba8d1a7a4",
+                "name" : "PublishKafka_2_0",
+                "type" : "PROCESSOR"
+              },
+              "flowFileExpiration" : "0 sec",
+              "groupIdentifier" : "955dd9db-0651-3968-ba05-f87df3df164e",
+              "identifier" : "e068283c-0156-3ea1-b1b4-1223a116294e",
+              "labelIndex" : 1,
+              "loadBalanceCompression" : "DO_NOT_COMPRESS",
+              "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+              "name" : "",
+              "partitioningAttribute" : "",
+              "prioritizers" : [ ],
+              "selectedRelationships" : [ "matched" ],
+              "source" : {
+                "comments" : "",
+                "groupId" : "955dd9db-0651-3968-ba05-f87df3df164e",
+                "id" : "8e2e6819-1fbf-3277-8c52-ce3c1927d9a6",
+                "name" : "EvaluateJsonPath",
+                "type" : "PROCESSOR"
+              },
+              "zIndex" : 0
+            }, {
+              "backPressureDataSizeThreshold" : "1 GB",
+              "backPressureObjectThreshold" : 10000,
+              "bends" : [ ],
+              "componentType" : "CONNECTION",
+              "destination" : {
+                "comments" : "",
+                "groupId" : "955dd9db-0651-3968-ba05-f87df3df164e",
+                "id" : "8e2e6819-1fbf-3277-8c52-ce3c1927d9a6",
+                "name" : "EvaluateJsonPath",
+                "type" : "PROCESSOR"
+              },
+              "flowFileExpiration" : "0 sec",
+              "groupIdentifier" : "955dd9db-0651-3968-ba05-f87df3df164e",
+              "identifier" : "a602e466-25ce-3971-952a-0636243d2113",
+              "labelIndex" : 1,
+              "loadBalanceCompression" : "DO_NOT_COMPRESS",
+              "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+              "name" : "",
+              "partitioningAttribute" : "",
+              "prioritizers" : [ ],
+              "selectedRelationships" : [ "success" ],
+              "source" : {
+                "comments" : "",
+                "groupId" : "955dd9db-0651-3968-ba05-f87df3df164e",
+                "id" : "4de60a98-b12f-3def-9515-05ce44c34242",
+                "name" : "PlantRawFile-plant_off-site",
+                "type" : "PROCESSOR"
+              },
+              "zIndex" : 0
+            }, {
+              "backPressureDataSizeThreshold" : "1 GB",
+              "backPressureObjectThreshold" : 10000,
+              "bends" : [ ],
+              "componentType" : "CONNECTION",
+              "destination" : {
+                "comments" : "",
+                "groupId" : "955dd9db-0651-3968-ba05-f87df3df164e",
+                "id" : "8e2e6819-1fbf-3277-8c52-ce3c1927d9a6",
+                "name" : "EvaluateJsonPath",
+                "type" : "PROCESSOR"
+              },
+              "flowFileExpiration" : "0 sec",
+              "groupIdentifier" : "955dd9db-0651-3968-ba05-f87df3df164e",
+              "identifier" : "f9b03375-926a-396c-b5df-e4b07a613845",
+              "labelIndex" : 1,
+              "loadBalanceCompression" : "DO_NOT_COMPRESS",
+              "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+              "name" : "",
+              "partitioningAttribute" : "",
+              "prioritizers" : [ ],
+              "selectedRelationships" : [ "success" ],
+              "source" : {
+                "comments" : "",
+                "groupId" : "955dd9db-0651-3968-ba05-f87df3df164e",
+                "id" : "9e6d1400-aed0-3d2c-92bb-13789f4297c5",
+                "name" : "PlantRawFile-plant_off-hire-requested",
+                "type" : "PROCESSOR"
+              },
+              "zIndex" : 0
+            }, {
+              "backPressureDataSizeThreshold" : "1 GB",
+              "backPressureObjectThreshold" : 10000,
+              "bends" : [ ],
+              "componentType" : "CONNECTION",
+              "destination" : {
+                "comments" : "",
+                "groupId" : "955dd9db-0651-3968-ba05-f87df3df164e",
+                "id" : "8e2e6819-1fbf-3277-8c52-ce3c1927d9a6",
+                "name" : "EvaluateJsonPath",
+                "type" : "PROCESSOR"
+              },
+              "flowFileExpiration" : "0 sec",
+              "groupIdentifier" : "955dd9db-0651-3968-ba05-f87df3df164e",
+              "identifier" : "69957693-146b-32a0-b2d4-63accaa18c54",
+              "labelIndex" : 1,
+              "loadBalanceCompression" : "DO_NOT_COMPRESS",
+              "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+              "name" : "",
+              "partitioningAttribute" : "",
+              "prioritizers" : [ ],
+              "selectedRelationships" : [ "success" ],
+              "source" : {
+                "comments" : "",
+                "groupId" : "955dd9db-0651-3968-ba05-f87df3df164e",
+                "id" : "57bac062-91b6-39b5-b291-0a9ab86a507e",
+                "name" : "PlantGrnRawGetFile",
+                "type" : "PROCESSOR"
+              },
+              "zIndex" : 0
+            }, {
+              "backPressureDataSizeThreshold" : "1 GB",
+              "backPressureObjectThreshold" : 10000,
+              "bends" : [ ],
+              "componentType" : "CONNECTION",
+              "destination" : {
+                "comments" : "",
+                "groupId" : "955dd9db-0651-3968-ba05-f87df3df164e",
+                "id" : "0cecf9bb-e8f8-3344-8347-a5b845b7c0d9",
+                "name" : "LogMessage",
+                "type" : "PROCESSOR"
+              },
+              "flowFileExpiration" : "0 sec",
+              "groupIdentifier" : "955dd9db-0651-3968-ba05-f87df3df164e",
+              "identifier" : "e0416255-dc3c-3171-9959-9eced7f47aee",
+              "labelIndex" : 1,
+              "loadBalanceCompression" : "DO_NOT_COMPRESS",
+              "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+              "name" : "",
+              "partitioningAttribute" : "",
+              "prioritizers" : [ ],
+              "selectedRelationships" : [ "failure", "success" ],
+              "source" : {
+                "comments" : "",
+                "groupId" : "955dd9db-0651-3968-ba05-f87df3df164e",
+                "id" : "fc5680dd-bc77-3926-a7e8-a75ba8d1a7a4",
+                "name" : "PublishKafka_2_0",
+                "type" : "PROCESSOR"
+              },
+              "zIndex" : 0
+            } ],
             "controllerServices" : [ ],
             "funnels" : [ ],
             "groupIdentifier" : "ea34280d-9df8-3fc4-9f4a-ee9e3bcd8397",
@@ -913,15 +1070,663 @@
               "y" : 8.0
             },
             "processGroups" : [ ],
-            "processors" : [ ],
+            "processors" : [ {
+              "autoTerminatedRelationships" : [ ],
+              "bulletinLevel" : "WARN",
+              "bundle" : {
+                "artifact" : "nifi-kafka-2-0-nar",
+                "group" : "org.apache.nifi",
+                "version" : "1.11.4"
+              },
+              "comments" : "",
+              "componentType" : "PROCESSOR",
+              "concurrentlySchedulableTaskCount" : 1,
+              "executionNode" : "ALL",
+              "groupIdentifier" : "955dd9db-0651-3968-ba05-f87df3df164e",
+              "identifier" : "fc5680dd-bc77-3926-a7e8-a75ba8d1a7a4",
+              "name" : "PublishKafka_2_0",
+              "penaltyDuration" : "30 sec",
+              "position" : {
+                "x" : 600.0,
+                "y" : 368.0
+              },
+              "properties" : {
+                "compression.type" : "none",
+                "bootstrap.servers" : "#{kafka.broker}",
+                "kafka-key" : "${kafka_receivedMessageKey}",
+                "sasl.mechanism" : "GSSAPI",
+                "max.block.ms" : "5 sec",
+                "message-header-encoding" : "UTF-8",
+                "ack.wait.time" : "5 secs",
+                "use-transactions" : "false",
+                "acks" : "0",
+                "security.protocol" : "PLAINTEXT",
+                "max.request.size" : "1 MB",
+                "sasl.token.auth" : "false",
+                "partitioner.class" : "org.apache.kafka.clients.producer.internals.DefaultPartitioner",
+                "topic" : "#{topic.cmf_data_raw}",
+                "key-attribute-encoding" : "utf-8"
+              },
+              "propertyDescriptors" : {
+                "compression.type" : {
+                  "displayName" : "Compression Type",
+                  "identifiesControllerService" : false,
+                  "name" : "compression.type",
+                  "sensitive" : false
+                },
+                "attribute-name-regex" : {
+                  "displayName" : "Attributes to Send as Headers (Regex)",
+                  "identifiesControllerService" : false,
+                  "name" : "attribute-name-regex",
+                  "sensitive" : false
+                },
+                "bootstrap.servers" : {
+                  "displayName" : "Kafka Brokers",
+                  "identifiesControllerService" : false,
+                  "name" : "bootstrap.servers",
+                  "sensitive" : false
+                },
+                "sasl.kerberos.principal" : {
+                  "displayName" : "Kerberos Principal",
+                  "identifiesControllerService" : false,
+                  "name" : "sasl.kerberos.principal",
+                  "sensitive" : false
+                },
+                "sasl.kerberos.service.name" : {
+                  "displayName" : "Kerberos Service Name",
+                  "identifiesControllerService" : false,
+                  "name" : "sasl.kerberos.service.name",
+                  "sensitive" : false
+                },
+                "kerberos-credentials-service" : {
+                  "displayName" : "Kerberos Credentials Service",
+                  "identifiesControllerService" : true,
+                  "name" : "kerberos-credentials-service",
+                  "sensitive" : false
+                },
+                "kafka-key" : {
+                  "displayName" : "Kafka Key",
+                  "identifiesControllerService" : false,
+                  "name" : "kafka-key",
+                  "sensitive" : false
+                },
+                "partition" : {
+                  "displayName" : "Partition",
+                  "identifiesControllerService" : false,
+                  "name" : "partition",
+                  "sensitive" : false
+                },
+                "sasl.mechanism" : {
+                  "displayName" : "SASL Mechanism",
+                  "identifiesControllerService" : false,
+                  "name" : "sasl.mechanism",
+                  "sensitive" : false
+                },
+                "max.block.ms" : {
+                  "displayName" : "Max Metadata Wait Time",
+                  "identifiesControllerService" : false,
+                  "name" : "max.block.ms",
+                  "sensitive" : false
+                },
+                "message-header-encoding" : {
+                  "displayName" : "Message Header Encoding",
+                  "identifiesControllerService" : false,
+                  "name" : "message-header-encoding",
+                  "sensitive" : false
+                },
+                "message-demarcator" : {
+                  "displayName" : "Message Demarcator",
+                  "identifiesControllerService" : false,
+                  "name" : "message-demarcator",
+                  "sensitive" : false
+                },
+                "transactional-id-prefix" : {
+                  "displayName" : "Transactional Id Prefix",
+                  "identifiesControllerService" : false,
+                  "name" : "transactional-id-prefix",
+                  "sensitive" : false
+                },
+                "ack.wait.time" : {
+                  "displayName" : "Acknowledgment Wait Time",
+                  "identifiesControllerService" : false,
+                  "name" : "ack.wait.time",
+                  "sensitive" : false
+                },
+                "sasl.username" : {
+                  "displayName" : "Username",
+                  "identifiesControllerService" : false,
+                  "name" : "sasl.username",
+                  "sensitive" : false
+                },
+                "use-transactions" : {
+                  "displayName" : "Use Transactions",
+                  "identifiesControllerService" : false,
+                  "name" : "use-transactions",
+                  "sensitive" : false
+                },
+                "acks" : {
+                  "displayName" : "Delivery Guarantee",
+                  "identifiesControllerService" : false,
+                  "name" : "acks",
+                  "sensitive" : false
+                },
+                "security.protocol" : {
+                  "displayName" : "Security Protocol",
+                  "identifiesControllerService" : false,
+                  "name" : "security.protocol",
+                  "sensitive" : false
+                },
+                "ssl.context.service" : {
+                  "displayName" : "SSL Context Service",
+                  "identifiesControllerService" : true,
+                  "name" : "ssl.context.service",
+                  "sensitive" : false
+                },
+                "max.request.size" : {
+                  "displayName" : "Max Request Size",
+                  "identifiesControllerService" : false,
+                  "name" : "max.request.size",
+                  "sensitive" : false
+                },
+                "sasl.token.auth" : {
+                  "displayName" : "Token Auth",
+                  "identifiesControllerService" : false,
+                  "name" : "sasl.token.auth",
+                  "sensitive" : false
+                },
+                "partitioner.class" : {
+                  "displayName" : "Partitioner class",
+                  "identifiesControllerService" : false,
+                  "name" : "partitioner.class",
+                  "sensitive" : false
+                },
+                "sasl.kerberos.keytab" : {
+                  "displayName" : "Kerberos Keytab",
+                  "identifiesControllerService" : false,
+                  "name" : "sasl.kerberos.keytab",
+                  "sensitive" : false
+                },
+                "topic" : {
+                  "displayName" : "Topic Name",
+                  "identifiesControllerService" : false,
+                  "name" : "topic",
+                  "sensitive" : false
+                },
+                "sasl.password" : {
+                  "displayName" : "Password",
+                  "identifiesControllerService" : false,
+                  "name" : "sasl.password",
+                  "sensitive" : true
+                },
+                "key-attribute-encoding" : {
+                  "displayName" : "Key Attribute Encoding",
+                  "identifiesControllerService" : false,
+                  "name" : "key-attribute-encoding",
+                  "sensitive" : false
+                }
+              },
+              "runDurationMillis" : 0,
+              "scheduledState" : "ENABLED",
+              "schedulingPeriod" : "0 sec",
+              "schedulingStrategy" : "TIMER_DRIVEN",
+              "style" : { },
+              "type" : "org.apache.nifi.processors.kafka.pubsub.PublishKafka_2_0",
+              "yieldDuration" : "1 sec"
+            }, {
+              "autoTerminatedRelationships" : [ "failure", "unmatched" ],
+              "bulletinLevel" : "WARN",
+              "bundle" : {
+                "artifact" : "nifi-standard-nar",
+                "group" : "org.apache.nifi",
+                "version" : "1.11.4"
+              },
+              "comments" : "",
+              "componentType" : "PROCESSOR",
+              "concurrentlySchedulableTaskCount" : 1,
+              "executionNode" : "ALL",
+              "groupIdentifier" : "955dd9db-0651-3968-ba05-f87df3df164e",
+              "identifier" : "8e2e6819-1fbf-3277-8c52-ce3c1927d9a6",
+              "name" : "EvaluateJsonPath",
+              "penaltyDuration" : "30 sec",
+              "position" : {
+                "x" : 600.0,
+                "y" : 120.0
+              },
+              "properties" : {
+                "Destination" : "flowfile-attribute",
+                "Return Type" : "auto-detect",
+                "Null Value Representation" : "empty string",
+                "kafka_receivedMessageKey" : "$.orgId",
+                "Path Not Found Behavior" : "ignore"
+              },
+              "propertyDescriptors" : {
+                "Destination" : {
+                  "displayName" : "Destination",
+                  "identifiesControllerService" : false,
+                  "name" : "Destination",
+                  "sensitive" : false
+                },
+                "Return Type" : {
+                  "displayName" : "Return Type",
+                  "identifiesControllerService" : false,
+                  "name" : "Return Type",
+                  "sensitive" : false
+                },
+                "Null Value Representation" : {
+                  "displayName" : "Null Value Representation",
+                  "identifiesControllerService" : false,
+                  "name" : "Null Value Representation",
+                  "sensitive" : false
+                },
+                "kafka_receivedMessageKey" : {
+                  "displayName" : "kafka_receivedMessageKey",
+                  "identifiesControllerService" : false,
+                  "name" : "kafka_receivedMessageKey",
+                  "sensitive" : false
+                },
+                "Path Not Found Behavior" : {
+                  "displayName" : "Path Not Found Behavior",
+                  "identifiesControllerService" : false,
+                  "name" : "Path Not Found Behavior",
+                  "sensitive" : false
+                }
+              },
+              "runDurationMillis" : 0,
+              "scheduledState" : "ENABLED",
+              "schedulingPeriod" : "0 sec",
+              "schedulingStrategy" : "TIMER_DRIVEN",
+              "style" : { },
+              "type" : "org.apache.nifi.processors.standard.EvaluateJsonPath",
+              "yieldDuration" : "1 sec"
+            }, {
+              "autoTerminatedRelationships" : [ ],
+              "bulletinLevel" : "WARN",
+              "bundle" : {
+                "artifact" : "nifi-standard-nar",
+                "group" : "org.apache.nifi",
+                "version" : "1.11.4"
+              },
+              "comments" : "",
+              "componentType" : "PROCESSOR",
+              "concurrentlySchedulableTaskCount" : 1,
+              "executionNode" : "ALL",
+              "groupIdentifier" : "955dd9db-0651-3968-ba05-f87df3df164e",
+              "identifier" : "9e6d1400-aed0-3d2c-92bb-13789f4297c5",
+              "name" : "PlantRawFile-plant_off-hire-requested",
+              "penaltyDuration" : "30 sec",
+              "position" : {
+                "x" : 664.0,
+                "y" : -152.0
+              },
+              "properties" : {
+                "Keep Source File" : "true",
+                "Minimum File Age" : "0 sec",
+                "Polling Interval" : "0 sec",
+                "Input Directory" : "#{test-files-dir}/eGRN/",
+                "Batch Size" : "10",
+                "Minimum File Size" : "1 B",
+                "Ignore Hidden Files" : "true",
+                "Recurse Subdirectories" : "true",
+                "File Filter" : "(plant_off-hire-requested_cmf_data_raw.json)"
+              },
+              "propertyDescriptors" : {
+                "Keep Source File" : {
+                  "displayName" : "Keep Source File",
+                  "identifiesControllerService" : false,
+                  "name" : "Keep Source File",
+                  "sensitive" : false
+                },
+                "Minimum File Age" : {
+                  "displayName" : "Minimum File Age",
+                  "identifiesControllerService" : false,
+                  "name" : "Minimum File Age",
+                  "sensitive" : false
+                },
+                "Polling Interval" : {
+                  "displayName" : "Polling Interval",
+                  "identifiesControllerService" : false,
+                  "name" : "Polling Interval",
+                  "sensitive" : false
+                },
+                "Input Directory" : {
+                  "displayName" : "Input Directory",
+                  "identifiesControllerService" : false,
+                  "name" : "Input Directory",
+                  "sensitive" : false
+                },
+                "Maximum File Age" : {
+                  "displayName" : "Maximum File Age",
+                  "identifiesControllerService" : false,
+                  "name" : "Maximum File Age",
+                  "sensitive" : false
+                },
+                "Batch Size" : {
+                  "displayName" : "Batch Size",
+                  "identifiesControllerService" : false,
+                  "name" : "Batch Size",
+                  "sensitive" : false
+                },
+                "Maximum File Size" : {
+                  "displayName" : "Maximum File Size",
+                  "identifiesControllerService" : false,
+                  "name" : "Maximum File Size",
+                  "sensitive" : false
+                },
+                "Minimum File Size" : {
+                  "displayName" : "Minimum File Size",
+                  "identifiesControllerService" : false,
+                  "name" : "Minimum File Size",
+                  "sensitive" : false
+                },
+                "Ignore Hidden Files" : {
+                  "displayName" : "Ignore Hidden Files",
+                  "identifiesControllerService" : false,
+                  "name" : "Ignore Hidden Files",
+                  "sensitive" : false
+                },
+                "Recurse Subdirectories" : {
+                  "displayName" : "Recurse Subdirectories",
+                  "identifiesControllerService" : false,
+                  "name" : "Recurse Subdirectories",
+                  "sensitive" : false
+                },
+                "File Filter" : {
+                  "displayName" : "File Filter",
+                  "identifiesControllerService" : false,
+                  "name" : "File Filter",
+                  "sensitive" : false
+                },
+                "Path Filter" : {
+                  "displayName" : "Path Filter",
+                  "identifiesControllerService" : false,
+                  "name" : "Path Filter",
+                  "sensitive" : false
+                }
+              },
+              "runDurationMillis" : 0,
+              "scheduledState" : "ENABLED",
+              "schedulingPeriod" : "3 sec",
+              "schedulingStrategy" : "TIMER_DRIVEN",
+              "style" : { },
+              "type" : "org.apache.nifi.processors.standard.GetFile",
+              "yieldDuration" : "1 sec"
+            }, {
+              "autoTerminatedRelationships" : [ ],
+              "bulletinLevel" : "WARN",
+              "bundle" : {
+                "artifact" : "nifi-standard-nar",
+                "group" : "org.apache.nifi",
+                "version" : "1.11.4"
+              },
+              "comments" : "",
+              "componentType" : "PROCESSOR",
+              "concurrentlySchedulableTaskCount" : 1,
+              "executionNode" : "ALL",
+              "groupIdentifier" : "955dd9db-0651-3968-ba05-f87df3df164e",
+              "identifier" : "57bac062-91b6-39b5-b291-0a9ab86a507e",
+              "name" : "PlantGrnRawGetFile",
+              "penaltyDuration" : "30 sec",
+              "position" : {
+                "x" : 240.0,
+                "y" : -152.0
+              },
+              "properties" : {
+                "Keep Source File" : "true",
+                "Minimum File Age" : "0 sec",
+                "Polling Interval" : "0 sec",
+                "Input Directory" : "#{test-files-dir}/eGRN/",
+                "Batch Size" : "10",
+                "Minimum File Size" : "1 B",
+                "Ignore Hidden Files" : "true",
+                "Recurse Subdirectories" : "true",
+                "File Filter" : "(plant_grn_cmf_data_raw.json)"
+              },
+              "propertyDescriptors" : {
+                "Keep Source File" : {
+                  "displayName" : "Keep Source File",
+                  "identifiesControllerService" : false,
+                  "name" : "Keep Source File",
+                  "sensitive" : false
+                },
+                "Minimum File Age" : {
+                  "displayName" : "Minimum File Age",
+                  "identifiesControllerService" : false,
+                  "name" : "Minimum File Age",
+                  "sensitive" : false
+                },
+                "Polling Interval" : {
+                  "displayName" : "Polling Interval",
+                  "identifiesControllerService" : false,
+                  "name" : "Polling Interval",
+                  "sensitive" : false
+                },
+                "Input Directory" : {
+                  "displayName" : "Input Directory",
+                  "identifiesControllerService" : false,
+                  "name" : "Input Directory",
+                  "sensitive" : false
+                },
+                "Maximum File Age" : {
+                  "displayName" : "Maximum File Age",
+                  "identifiesControllerService" : false,
+                  "name" : "Maximum File Age",
+                  "sensitive" : false
+                },
+                "Batch Size" : {
+                  "displayName" : "Batch Size",
+                  "identifiesControllerService" : false,
+                  "name" : "Batch Size",
+                  "sensitive" : false
+                },
+                "Maximum File Size" : {
+                  "displayName" : "Maximum File Size",
+                  "identifiesControllerService" : false,
+                  "name" : "Maximum File Size",
+                  "sensitive" : false
+                },
+                "Minimum File Size" : {
+                  "displayName" : "Minimum File Size",
+                  "identifiesControllerService" : false,
+                  "name" : "Minimum File Size",
+                  "sensitive" : false
+                },
+                "Ignore Hidden Files" : {
+                  "displayName" : "Ignore Hidden Files",
+                  "identifiesControllerService" : false,
+                  "name" : "Ignore Hidden Files",
+                  "sensitive" : false
+                },
+                "Recurse Subdirectories" : {
+                  "displayName" : "Recurse Subdirectories",
+                  "identifiesControllerService" : false,
+                  "name" : "Recurse Subdirectories",
+                  "sensitive" : false
+                },
+                "File Filter" : {
+                  "displayName" : "File Filter",
+                  "identifiesControllerService" : false,
+                  "name" : "File Filter",
+                  "sensitive" : false
+                },
+                "Path Filter" : {
+                  "displayName" : "Path Filter",
+                  "identifiesControllerService" : false,
+                  "name" : "Path Filter",
+                  "sensitive" : false
+                }
+              },
+              "runDurationMillis" : 0,
+              "scheduledState" : "ENABLED",
+              "schedulingPeriod" : "3 sec",
+              "schedulingStrategy" : "TIMER_DRIVEN",
+              "style" : { },
+              "type" : "org.apache.nifi.processors.standard.GetFile",
+              "yieldDuration" : "1 sec"
+            }, {
+              "autoTerminatedRelationships" : [ ],
+              "bulletinLevel" : "WARN",
+              "bundle" : {
+                "artifact" : "nifi-standard-nar",
+                "group" : "org.apache.nifi",
+                "version" : "1.11.4"
+              },
+              "comments" : "",
+              "componentType" : "PROCESSOR",
+              "concurrentlySchedulableTaskCount" : 1,
+              "executionNode" : "ALL",
+              "groupIdentifier" : "955dd9db-0651-3968-ba05-f87df3df164e",
+              "identifier" : "4de60a98-b12f-3def-9515-05ce44c34242",
+              "name" : "PlantRawFile-plant_off-site",
+              "penaltyDuration" : "30 sec",
+              "position" : {
+                "x" : 1112.0,
+                "y" : -152.0
+              },
+              "properties" : {
+                "Keep Source File" : "true",
+                "Minimum File Age" : "0 sec",
+                "Polling Interval" : "0 sec",
+                "Input Directory" : "#{test-files-dir}/eGRN/",
+                "Batch Size" : "10",
+                "Minimum File Size" : "1 B",
+                "Ignore Hidden Files" : "true",
+                "Recurse Subdirectories" : "true",
+                "File Filter" : "(plant_off-site_cmf_data_raw.json)"
+              },
+              "propertyDescriptors" : {
+                "Keep Source File" : {
+                  "displayName" : "Keep Source File",
+                  "identifiesControllerService" : false,
+                  "name" : "Keep Source File",
+                  "sensitive" : false
+                },
+                "Minimum File Age" : {
+                  "displayName" : "Minimum File Age",
+                  "identifiesControllerService" : false,
+                  "name" : "Minimum File Age",
+                  "sensitive" : false
+                },
+                "Polling Interval" : {
+                  "displayName" : "Polling Interval",
+                  "identifiesControllerService" : false,
+                  "name" : "Polling Interval",
+                  "sensitive" : false
+                },
+                "Input Directory" : {
+                  "displayName" : "Input Directory",
+                  "identifiesControllerService" : false,
+                  "name" : "Input Directory",
+                  "sensitive" : false
+                },
+                "Maximum File Age" : {
+                  "displayName" : "Maximum File Age",
+                  "identifiesControllerService" : false,
+                  "name" : "Maximum File Age",
+                  "sensitive" : false
+                },
+                "Batch Size" : {
+                  "displayName" : "Batch Size",
+                  "identifiesControllerService" : false,
+                  "name" : "Batch Size",
+                  "sensitive" : false
+                },
+                "Maximum File Size" : {
+                  "displayName" : "Maximum File Size",
+                  "identifiesControllerService" : false,
+                  "name" : "Maximum File Size",
+                  "sensitive" : false
+                },
+                "Minimum File Size" : {
+                  "displayName" : "Minimum File Size",
+                  "identifiesControllerService" : false,
+                  "name" : "Minimum File Size",
+                  "sensitive" : false
+                },
+                "Ignore Hidden Files" : {
+                  "displayName" : "Ignore Hidden Files",
+                  "identifiesControllerService" : false,
+                  "name" : "Ignore Hidden Files",
+                  "sensitive" : false
+                },
+                "Recurse Subdirectories" : {
+                  "displayName" : "Recurse Subdirectories",
+                  "identifiesControllerService" : false,
+                  "name" : "Recurse Subdirectories",
+                  "sensitive" : false
+                },
+                "File Filter" : {
+                  "displayName" : "File Filter",
+                  "identifiesControllerService" : false,
+                  "name" : "File Filter",
+                  "sensitive" : false
+                },
+                "Path Filter" : {
+                  "displayName" : "Path Filter",
+                  "identifiesControllerService" : false,
+                  "name" : "Path Filter",
+                  "sensitive" : false
+                }
+              },
+              "runDurationMillis" : 0,
+              "scheduledState" : "ENABLED",
+              "schedulingPeriod" : "3 sec",
+              "schedulingStrategy" : "TIMER_DRIVEN",
+              "style" : { },
+              "type" : "org.apache.nifi.processors.standard.GetFile",
+              "yieldDuration" : "1 sec"
+            }, {
+              "autoTerminatedRelationships" : [ "success" ],
+              "bulletinLevel" : "WARN",
+              "bundle" : {
+                "artifact" : "nifi-standard-nar",
+                "group" : "org.apache.nifi",
+                "version" : "1.11.4"
+              },
+              "comments" : "",
+              "componentType" : "PROCESSOR",
+              "concurrentlySchedulableTaskCount" : 1,
+              "executionNode" : "ALL",
+              "groupIdentifier" : "955dd9db-0651-3968-ba05-f87df3df164e",
+              "identifier" : "0cecf9bb-e8f8-3344-8347-a5b845b7c0d9",
+              "name" : "LogMessage",
+              "penaltyDuration" : "30 sec",
+              "position" : {
+                "x" : 1048.0,
+                "y" : 368.0
+              },
+              "properties" : {
+                "log-level" : "info"
+              },
+              "propertyDescriptors" : {
+                "log-message" : {
+                  "displayName" : "Log message",
+                  "identifiesControllerService" : false,
+                  "name" : "log-message",
+                  "sensitive" : false
+                },
+                "log-level" : {
+                  "displayName" : "Log Level",
+                  "identifiesControllerService" : false,
+                  "name" : "log-level",
+                  "sensitive" : false
+                },
+                "log-prefix" : {
+                  "displayName" : "Log prefix",
+                  "identifiesControllerService" : false,
+                  "name" : "log-prefix",
+                  "sensitive" : false
+                }
+              },
+              "runDurationMillis" : 0,
+              "scheduledState" : "ENABLED",
+              "schedulingPeriod" : "0 sec",
+              "schedulingStrategy" : "TIMER_DRIVEN",
+              "style" : { },
+              "type" : "org.apache.nifi.processors.standard.LogMessage",
+              "yieldDuration" : "1 sec"
+            } ],
             "remoteProcessGroups" : [ ],
-            "variables" : { },
-            "versionedFlowCoordinates" : {
-              "bucketId" : "c91a0077-beb2-4583-a64a-feaef7e78358",
-              "flowId" : "6ce0d0a0-dae1-412c-97f0-e6082eb31732",
-              "registryUrl" : "http://maqshost:19090",
-              "version" : 2
-            }
+            "variables" : { }
           } ],
           "processors" : [ ],
           "remoteProcessGroups" : [ ],
@@ -1943,14 +2748,14 @@
                 "group" : "org.apache.nifi",
                 "version" : "1.11.4"
               },
-              "type" : "org.apache.nifi.ssl.RestrictedSSLContextService"
+              "type" : "org.apache.nifi.ssl.SSLContextService"
             }, {
               "bundle" : {
                 "artifact" : "nifi-standard-services-api-nar",
                 "group" : "org.apache.nifi",
                 "version" : "1.11.4"
               },
-              "type" : "org.apache.nifi.ssl.SSLContextService"
+              "type" : "org.apache.nifi.ssl.RestrictedSSLContextService"
             } ],
             "groupIdentifier" : "2f77c1f0-3e13-343a-8837-b8eee6a17ace",
             "identifier" : "f38ecd7b-38ee-31f1-a48a-0bea49617e25",
