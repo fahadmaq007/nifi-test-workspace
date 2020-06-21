@@ -4443,66 +4443,6 @@
             "destination" : {
               "comments" : "",
               "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
-              "id" : "2936c42b-ba8d-31da-ba65-83c5308fedd1",
-              "name" : "LogMessage",
-              "type" : "PROCESSOR"
-            },
-            "flowFileExpiration" : "0 sec",
-            "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
-            "identifier" : "493e0ff0-66f8-393d-98eb-a7c49f0ad909",
-            "labelIndex" : 1,
-            "loadBalanceCompression" : "DO_NOT_COMPRESS",
-            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-            "name" : "",
-            "partitioningAttribute" : "",
-            "prioritizers" : [ ],
-            "selectedRelationships" : [ "original", "failure" ],
-            "source" : {
-              "comments" : "",
-              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
-              "id" : "5900309f-912b-39b1-b265-ab7c2d27e3d3",
-              "name" : "MergeContent",
-              "type" : "PROCESSOR"
-            },
-            "zIndex" : 0
-          }, {
-            "backPressureDataSizeThreshold" : "1 GB",
-            "backPressureObjectThreshold" : 10000,
-            "bends" : [ ],
-            "componentType" : "CONNECTION",
-            "destination" : {
-              "comments" : "",
-              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
-              "id" : "2936c42b-ba8d-31da-ba65-83c5308fedd1",
-              "name" : "LogMessage",
-              "type" : "PROCESSOR"
-            },
-            "flowFileExpiration" : "0 sec",
-            "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
-            "identifier" : "ef745f88-1265-38df-8128-b136f8996e8c",
-            "labelIndex" : 1,
-            "loadBalanceCompression" : "DO_NOT_COMPRESS",
-            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-            "name" : "",
-            "partitioningAttribute" : "",
-            "prioritizers" : [ ],
-            "selectedRelationships" : [ "failure" ],
-            "source" : {
-              "comments" : "",
-              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
-              "id" : "42eab463-ca95-3513-8330-b3d1f913660a",
-              "name" : "JsonToExcel",
-              "type" : "PROCESSOR"
-            },
-            "zIndex" : 0
-          }, {
-            "backPressureDataSizeThreshold" : "1 GB",
-            "backPressureObjectThreshold" : 10000,
-            "bends" : [ ],
-            "componentType" : "CONNECTION",
-            "destination" : {
-              "comments" : "",
-              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
               "id" : "5900309f-912b-39b1-b265-ab7c2d27e3d3",
               "name" : "MergeContent",
               "type" : "PROCESSOR"
@@ -4552,36 +4492,6 @@
               "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
               "id" : "203b4333-681e-312d-bc4a-c0677cef3eb8",
               "name" : "GetFile",
-              "type" : "PROCESSOR"
-            },
-            "zIndex" : 0
-          }, {
-            "backPressureDataSizeThreshold" : "1 GB",
-            "backPressureObjectThreshold" : 10000,
-            "bends" : [ ],
-            "componentType" : "CONNECTION",
-            "destination" : {
-              "comments" : "",
-              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
-              "id" : "2936c42b-ba8d-31da-ba65-83c5308fedd1",
-              "name" : "LogMessage",
-              "type" : "PROCESSOR"
-            },
-            "flowFileExpiration" : "0 sec",
-            "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
-            "identifier" : "83c6ad61-55da-356b-af5a-5526b1760cbf",
-            "labelIndex" : 1,
-            "loadBalanceCompression" : "DO_NOT_COMPRESS",
-            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-            "name" : "",
-            "partitioningAttribute" : "",
-            "prioritizers" : [ ],
-            "selectedRelationships" : [ "failure" ],
-            "source" : {
-              "comments" : "",
-              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
-              "id" : "d6abe58b-b70f-36bd-8fb2-acc839b5162d",
-              "name" : "FlattenJson",
               "type" : "PROCESSOR"
             },
             "zIndex" : 0
@@ -4647,8 +4557,8 @@
             "name" : "UpdateAttribute",
             "penaltyDuration" : "30 sec",
             "position" : {
-              "x" : 264.0,
-              "y" : 232.0
+              "x" : 848.0,
+              "y" : -16.0
             },
             "properties" : {
               "filename" : "timesheets_${now():format(\"HHmmss_SSS\")}",
@@ -4695,7 +4605,7 @@
             "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
             "yieldDuration" : "1 sec"
           }, {
-            "autoTerminatedRelationships" : [ ],
+            "autoTerminatedRelationships" : [ "failure" ],
             "bulletinLevel" : "WARN",
             "bundle" : {
               "artifact" : "nifi-commons-nar",
@@ -4711,8 +4621,8 @@
             "name" : "JsonToExcel",
             "penaltyDuration" : "30 sec",
             "position" : {
-              "x" : 768.0,
-              "y" : 304.0
+              "x" : 848.0,
+              "y" : 208.0
             },
             "properties" : {
               "excel-format" : "xlsx"
@@ -4733,57 +4643,7 @@
             "type" : "com.maqs.nifi.commons.processors.JsonToExcel",
             "yieldDuration" : "1 sec"
           }, {
-            "autoTerminatedRelationships" : [ "success" ],
-            "bulletinLevel" : "WARN",
-            "bundle" : {
-              "artifact" : "nifi-standard-nar",
-              "group" : "org.apache.nifi",
-              "version" : "1.11.4"
-            },
-            "comments" : "",
-            "componentType" : "PROCESSOR",
-            "concurrentlySchedulableTaskCount" : 1,
-            "executionNode" : "ALL",
-            "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
-            "identifier" : "2936c42b-ba8d-31da-ba65-83c5308fedd1",
-            "name" : "LogMessage",
-            "penaltyDuration" : "30 sec",
-            "position" : {
-              "x" : 1320.0,
-              "y" : 176.0
-            },
-            "properties" : {
-              "log-level" : "info"
-            },
-            "propertyDescriptors" : {
-              "log-message" : {
-                "displayName" : "Log message",
-                "identifiesControllerService" : false,
-                "name" : "log-message",
-                "sensitive" : false
-              },
-              "log-level" : {
-                "displayName" : "Log Level",
-                "identifiesControllerService" : false,
-                "name" : "log-level",
-                "sensitive" : false
-              },
-              "log-prefix" : {
-                "displayName" : "Log prefix",
-                "identifiesControllerService" : false,
-                "name" : "log-prefix",
-                "sensitive" : false
-              }
-            },
-            "runDurationMillis" : 0,
-            "scheduledState" : "ENABLED",
-            "schedulingPeriod" : "0 sec",
-            "schedulingStrategy" : "TIMER_DRIVEN",
-            "style" : { },
-            "type" : "org.apache.nifi.processors.standard.LogMessage",
-            "yieldDuration" : "1 sec"
-          }, {
-            "autoTerminatedRelationships" : [ ],
+            "autoTerminatedRelationships" : [ "failure" ],
             "bulletinLevel" : "WARN",
             "bundle" : {
               "artifact" : "nifi-standard-nar",
@@ -4799,8 +4659,8 @@
             "name" : "FlattenJson",
             "penaltyDuration" : "30 sec",
             "position" : {
-              "x" : 776.0,
-              "y" : -32.0
+              "x" : 208.0,
+              "y" : 176.0
             },
             "properties" : {
               "flatten-mode" : "normal",
@@ -4956,8 +4816,8 @@
             "name" : "PutFile",
             "penaltyDuration" : "30 sec",
             "position" : {
-              "x" : 768.0,
-              "y" : 488.0
+              "x" : 848.0,
+              "y" : 408.0
             },
             "properties" : {
               "Create Missing Directories" : "true",
@@ -5022,7 +4882,7 @@
             "type" : "org.apache.nifi.processors.standard.PutFile",
             "yieldDuration" : "1 sec"
           }, {
-            "autoTerminatedRelationships" : [ ],
+            "autoTerminatedRelationships" : [ "original", "failure" ],
             "bulletinLevel" : "WARN",
             "bundle" : {
               "artifact" : "nifi-standard-nar",
@@ -5038,8 +4898,8 @@
             "name" : "MergeContent",
             "penaltyDuration" : "30 sec",
             "position" : {
-              "x" : 776.0,
-              "y" : 144.0
+              "x" : 208.0,
+              "y" : 400.0
             },
             "properties" : {
               "Keep Path" : "false",
