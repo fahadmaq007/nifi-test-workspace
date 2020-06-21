@@ -1,6 +1,6 @@
 flows:
-  1214f2aa-8a16-48e7-b5a5-a3b7fb3cdc83: {ver: 10, file: Local_explore_flow.snapshot,
-    comments: Re-arrangements done, author: anonymous, created: 1592728682186, flowName: Local
+  1214f2aa-8a16-48e7-b5a5-a3b7fb3cdc83: {ver: 11, file: Local_explore_flow.snapshot,
+    comments: Re-arrangements, author: anonymous, created: 1592729152138, flowName: Local
       explore flow, flowDesc: ''}
 layoutVer: 1
 bucketId: c91a0077-beb2-4583-a64a-feaef7e78358

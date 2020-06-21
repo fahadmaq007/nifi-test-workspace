@@ -650,8 +650,8 @@
               "name" : "EvaluateJsonPath",
               "penaltyDuration" : "30 sec",
               "position" : {
-                "x" : 248.0,
-                "y" : 128.0
+                "x" : 264.0,
+                "y" : 24.0
               },
               "properties" : {
                 "Destination" : "flowfile-attribute",
@@ -693,7 +693,7 @@
                 }
               },
               "runDurationMillis" : 0,
-              "scheduledState" : "DISABLED",
+              "scheduledState" : "ENABLED",
               "schedulingPeriod" : "0 sec",
               "schedulingStrategy" : "TIMER_DRIVEN",
               "style" : { },
@@ -716,8 +716,8 @@
               "name" : "PublishKafka_2_0",
               "penaltyDuration" : "30 sec",
               "position" : {
-                "x" : 248.0,
-                "y" : 336.0
+                "x" : 272.0,
+                "y" : 240.0
               },
               "properties" : {
                 "compression.type" : "none",
@@ -1030,8 +1030,8 @@
               "name" : "LogMessage",
               "penaltyDuration" : "30 sec",
               "position" : {
-                "x" : 248.0,
-                "y" : 552.0
+                "x" : 272.0,
+                "y" : 440.0
               },
               "properties" : {
                 "log-level" : "info"
@@ -1080,8 +1080,8 @@
               "name" : "PutCouchdbKey",
               "penaltyDuration" : "30 sec",
               "position" : {
-                "x" : 832.0,
-                "y" : 288.0
+                "x" : 840.0,
+                "y" : 232.0
               },
               "properties" : {
                 "cluster-controller-service" : "34b321ff-0b77-3d67-9d8e-0aa4ecf7775f",
@@ -1138,8 +1138,8 @@
               "name" : "LogMessage",
               "penaltyDuration" : "30 sec",
               "position" : {
-                "x" : 840.0,
-                "y" : 536.0
+                "x" : 848.0,
+                "y" : 424.0
               },
               "properties" : {
                 "log-level" : "info"
@@ -5079,6 +5079,66 @@
             "destination" : {
               "comments" : "",
               "groupId" : "1f7047e4-fb5b-38b7-97e6-6d35d1759b00",
+              "id" : "768b0afb-e1a5-3099-9f73-74d501f3b6f8",
+              "name" : "EvaluateJsonPath",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "1f7047e4-fb5b-38b7-97e6-6d35d1759b00",
+            "identifier" : "6fd4d8aa-e96b-3b6e-8129-acdf6f43f2eb",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "success" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "1f7047e4-fb5b-38b7-97e6-6d35d1759b00",
+              "id" : "7eb9abbe-514f-372f-b651-fdbe994b1eda",
+              "name" : "GetFile",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "1f7047e4-fb5b-38b7-97e6-6d35d1759b00",
+              "id" : "0fcc775d-95c1-320d-8748-eceb34ec7fcb",
+              "name" : "PutCouchdbKey",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "1f7047e4-fb5b-38b7-97e6-6d35d1759b00",
+            "identifier" : "7366bd28-bf0d-3970-a42c-b672131f22a5",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "matched" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "1f7047e4-fb5b-38b7-97e6-6d35d1759b00",
+              "id" : "768b0afb-e1a5-3099-9f73-74d501f3b6f8",
+              "name" : "EvaluateJsonPath",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "1f7047e4-fb5b-38b7-97e6-6d35d1759b00",
               "id" : "c4695874-db8d-3314-910e-0d0e662c1aa5",
               "name" : "LogAttribute",
               "type" : "PROCESSOR"
@@ -5098,6 +5158,36 @@
               "groupId" : "1f7047e4-fb5b-38b7-97e6-6d35d1759b00",
               "id" : "881b8ab1-0705-3039-a843-97a051b719d0",
               "name" : "GetCouchdbKey",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "1f7047e4-fb5b-38b7-97e6-6d35d1759b00",
+              "id" : "09335ad3-e878-34f3-afb2-21479e752f80",
+              "name" : "LogMessage",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "1f7047e4-fb5b-38b7-97e6-6d35d1759b00",
+            "identifier" : "f6dcbdce-8e7e-30e5-baa8-0bc865f2a736",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "success" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "1f7047e4-fb5b-38b7-97e6-6d35d1759b00",
+              "id" : "0fcc775d-95c1-320d-8748-eceb34ec7fcb",
+              "name" : "PutCouchdbKey",
               "type" : "PROCESSOR"
             },
             "zIndex" : 0
@@ -5167,8 +5257,36 @@
           "groupIdentifier" : "448c9701-0cc4-3ffc-baa2-b4dc2e12c8e9",
           "identifier" : "1f7047e4-fb5b-38b7-97e6-6d35d1759b00",
           "inputPorts" : [ ],
-          "labels" : [ ],
-          "name" : "CouchDB Processing Flow",
+          "labels" : [ {
+            "componentType" : "LABEL",
+            "groupIdentifier" : "1f7047e4-fb5b-38b7-97e6-6d35d1759b00",
+            "height" : 48.0,
+            "identifier" : "8cfc4887-b1cd-3bc3-9b0c-55545db6de95",
+            "label" : "Get document from CouchDB",
+            "position" : {
+              "x" : 552.0,
+              "y" : 472.0
+            },
+            "style" : {
+              "font-size" : "20px"
+            },
+            "width" : 280.0
+          }, {
+            "componentType" : "LABEL",
+            "groupIdentifier" : "1f7047e4-fb5b-38b7-97e6-6d35d1759b00",
+            "height" : 48.0,
+            "identifier" : "c3f52795-a093-34c1-b19b-cfd622e5eece",
+            "label" : "Put document into CouchDB",
+            "position" : {
+              "x" : 1328.0,
+              "y" : 472.0
+            },
+            "style" : {
+              "font-size" : "20px"
+            },
+            "width" : 280.0
+          } ],
+          "name" : "CouchDB Test Flow",
           "outputPorts" : [ ],
           "parameterContextName" : "Local Context",
           "position" : {
@@ -5355,6 +5473,118 @@
             "type" : "org.apache.nifi.processors.standard.EvaluateJsonPath",
             "yieldDuration" : "1 sec"
           }, {
+            "autoTerminatedRelationships" : [ ],
+            "bulletinLevel" : "WARN",
+            "bundle" : {
+              "artifact" : "nifi-standard-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.11.4"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "ALL",
+            "groupIdentifier" : "1f7047e4-fb5b-38b7-97e6-6d35d1759b00",
+            "identifier" : "7eb9abbe-514f-372f-b651-fdbe994b1eda",
+            "name" : "GetFile",
+            "penaltyDuration" : "30 sec",
+            "position" : {
+              "x" : 1312.0,
+              "y" : 536.0
+            },
+            "properties" : {
+              "Keep Source File" : "true",
+              "Minimum File Age" : "0 sec",
+              "Polling Interval" : "0 sec",
+              "Input Directory" : "#{test-files-dir}/eGRN/",
+              "Batch Size" : "10",
+              "Minimum File Size" : "1 B",
+              "Ignore Hidden Files" : "true",
+              "Recurse Subdirectories" : "true",
+              "File Filter" : "(plant_delivery_expected.json)"
+            },
+            "propertyDescriptors" : {
+              "Keep Source File" : {
+                "displayName" : "Keep Source File",
+                "identifiesControllerService" : false,
+                "name" : "Keep Source File",
+                "sensitive" : false
+              },
+              "Minimum File Age" : {
+                "displayName" : "Minimum File Age",
+                "identifiesControllerService" : false,
+                "name" : "Minimum File Age",
+                "sensitive" : false
+              },
+              "Polling Interval" : {
+                "displayName" : "Polling Interval",
+                "identifiesControllerService" : false,
+                "name" : "Polling Interval",
+                "sensitive" : false
+              },
+              "Input Directory" : {
+                "displayName" : "Input Directory",
+                "identifiesControllerService" : false,
+                "name" : "Input Directory",
+                "sensitive" : false
+              },
+              "Maximum File Age" : {
+                "displayName" : "Maximum File Age",
+                "identifiesControllerService" : false,
+                "name" : "Maximum File Age",
+                "sensitive" : false
+              },
+              "Batch Size" : {
+                "displayName" : "Batch Size",
+                "identifiesControllerService" : false,
+                "name" : "Batch Size",
+                "sensitive" : false
+              },
+              "Maximum File Size" : {
+                "displayName" : "Maximum File Size",
+                "identifiesControllerService" : false,
+                "name" : "Maximum File Size",
+                "sensitive" : false
+              },
+              "Minimum File Size" : {
+                "displayName" : "Minimum File Size",
+                "identifiesControllerService" : false,
+                "name" : "Minimum File Size",
+                "sensitive" : false
+              },
+              "Ignore Hidden Files" : {
+                "displayName" : "Ignore Hidden Files",
+                "identifiesControllerService" : false,
+                "name" : "Ignore Hidden Files",
+                "sensitive" : false
+              },
+              "Recurse Subdirectories" : {
+                "displayName" : "Recurse Subdirectories",
+                "identifiesControllerService" : false,
+                "name" : "Recurse Subdirectories",
+                "sensitive" : false
+              },
+              "File Filter" : {
+                "displayName" : "File Filter",
+                "identifiesControllerService" : false,
+                "name" : "File Filter",
+                "sensitive" : false
+              },
+              "Path Filter" : {
+                "displayName" : "Path Filter",
+                "identifiesControllerService" : false,
+                "name" : "Path Filter",
+                "sensitive" : false
+              }
+            },
+            "runDurationMillis" : 0,
+            "scheduledState" : "ENABLED",
+            "schedulingPeriod" : "5 sec",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "org.apache.nifi.processors.standard.GetFile",
+            "yieldDuration" : "1 sec"
+          }, {
             "autoTerminatedRelationships" : [ "original" ],
             "bulletinLevel" : "DEBUG",
             "bundle" : {
@@ -5429,7 +5659,7 @@
             "name" : "LogAttribute",
             "penaltyDuration" : "30 sec",
             "position" : {
-              "x" : 752.0,
+              "x" : 792.0,
               "y" : 1136.0
             },
             "properties" : {
@@ -5496,6 +5726,180 @@
             "type" : "org.apache.nifi.processors.standard.LogAttribute",
             "yieldDuration" : "1 sec"
           }, {
+            "autoTerminatedRelationships" : [ "failure", "retry" ],
+            "bulletinLevel" : "WARN",
+            "bundle" : {
+              "artifact" : "nifi-couchdb-nar",
+              "group" : "com.maqs.nifi",
+              "version" : "1.0"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "ALL",
+            "groupIdentifier" : "1f7047e4-fb5b-38b7-97e6-6d35d1759b00",
+            "identifier" : "0fcc775d-95c1-320d-8748-eceb34ec7fcb",
+            "name" : "PutCouchdbKey",
+            "penaltyDuration" : "30 sec",
+            "position" : {
+              "x" : 1312.0,
+              "y" : 904.0
+            },
+            "properties" : {
+              "cluster-controller-service" : "34b321ff-0b77-3d67-9d8e-0aa4ecf7775f",
+              "database-name" : "cmf_${kafka_receivedMessageKey}",
+              "partial-update" : "true"
+            },
+            "propertyDescriptors" : {
+              "cluster-controller-service" : {
+                "displayName" : "Couchdb Cluster Controller Service",
+                "identifiesControllerService" : true,
+                "name" : "cluster-controller-service",
+                "sensitive" : false
+              },
+              "database-name" : {
+                "displayName" : "Database Name",
+                "identifiesControllerService" : false,
+                "name" : "database-name",
+                "sensitive" : false
+              },
+              "partial-update" : {
+                "displayName" : "Partial Update",
+                "identifiesControllerService" : false,
+                "name" : "partial-update",
+                "sensitive" : false
+              },
+              "document-id" : {
+                "displayName" : "Document Id",
+                "identifiesControllerService" : false,
+                "name" : "document-id",
+                "sensitive" : false
+              }
+            },
+            "runDurationMillis" : 0,
+            "scheduledState" : "ENABLED",
+            "schedulingPeriod" : "0 sec",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "com.maqs.nifi.processors.couchdb.PutCouchdbKey",
+            "yieldDuration" : "1 sec"
+          }, {
+            "autoTerminatedRelationships" : [ "failure", "unmatched" ],
+            "bulletinLevel" : "WARN",
+            "bundle" : {
+              "artifact" : "nifi-standard-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.11.4"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "ALL",
+            "groupIdentifier" : "1f7047e4-fb5b-38b7-97e6-6d35d1759b00",
+            "identifier" : "768b0afb-e1a5-3099-9f73-74d501f3b6f8",
+            "name" : "EvaluateJsonPath",
+            "penaltyDuration" : "30 sec",
+            "position" : {
+              "x" : 1312.0,
+              "y" : 720.0
+            },
+            "properties" : {
+              "Destination" : "flowfile-attribute",
+              "Return Type" : "auto-detect",
+              "Null Value Representation" : "empty string",
+              "kafka_receivedMessageKey" : "$.orgId",
+              "Path Not Found Behavior" : "ignore"
+            },
+            "propertyDescriptors" : {
+              "Destination" : {
+                "displayName" : "Destination",
+                "identifiesControllerService" : false,
+                "name" : "Destination",
+                "sensitive" : false
+              },
+              "Return Type" : {
+                "displayName" : "Return Type",
+                "identifiesControllerService" : false,
+                "name" : "Return Type",
+                "sensitive" : false
+              },
+              "Null Value Representation" : {
+                "displayName" : "Null Value Representation",
+                "identifiesControllerService" : false,
+                "name" : "Null Value Representation",
+                "sensitive" : false
+              },
+              "kafka_receivedMessageKey" : {
+                "displayName" : "kafka_receivedMessageKey",
+                "identifiesControllerService" : false,
+                "name" : "kafka_receivedMessageKey",
+                "sensitive" : false
+              },
+              "Path Not Found Behavior" : {
+                "displayName" : "Path Not Found Behavior",
+                "identifiesControllerService" : false,
+                "name" : "Path Not Found Behavior",
+                "sensitive" : false
+              }
+            },
+            "runDurationMillis" : 0,
+            "scheduledState" : "ENABLED",
+            "schedulingPeriod" : "0 sec",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "org.apache.nifi.processors.standard.EvaluateJsonPath",
+            "yieldDuration" : "1 sec"
+          }, {
+            "autoTerminatedRelationships" : [ "success" ],
+            "bulletinLevel" : "WARN",
+            "bundle" : {
+              "artifact" : "nifi-standard-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.11.4"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "ALL",
+            "groupIdentifier" : "1f7047e4-fb5b-38b7-97e6-6d35d1759b00",
+            "identifier" : "09335ad3-e878-34f3-afb2-21479e752f80",
+            "name" : "LogMessage",
+            "penaltyDuration" : "30 sec",
+            "position" : {
+              "x" : 1312.0,
+              "y" : 1080.0
+            },
+            "properties" : {
+              "log-level" : "info"
+            },
+            "propertyDescriptors" : {
+              "log-message" : {
+                "displayName" : "Log message",
+                "identifiesControllerService" : false,
+                "name" : "log-message",
+                "sensitive" : false
+              },
+              "log-level" : {
+                "displayName" : "Log Level",
+                "identifiesControllerService" : false,
+                "name" : "log-level",
+                "sensitive" : false
+              },
+              "log-prefix" : {
+                "displayName" : "Log prefix",
+                "identifiesControllerService" : false,
+                "name" : "log-prefix",
+                "sensitive" : false
+              }
+            },
+            "runDurationMillis" : 0,
+            "scheduledState" : "ENABLED",
+            "schedulingPeriod" : "0 sec",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "org.apache.nifi.processors.standard.LogMessage",
+            "yieldDuration" : "1 sec"
+          }, {
             "autoTerminatedRelationships" : [ "success" ],
             "bulletinLevel" : "WARN",
             "bundle" : {
@@ -5512,8 +5916,8 @@
             "name" : "LogAttribute",
             "penaltyDuration" : "30 sec",
             "position" : {
-              "x" : 304.0,
-              "y" : 1152.0
+              "x" : 312.0,
+              "y" : 1136.0
             },
             "properties" : {
               "character-set" : "UTF-8",
