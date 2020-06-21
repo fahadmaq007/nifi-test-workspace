@@ -2130,13 +2130,43 @@
               "destination" : {
                 "comments" : "",
                 "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
+                "id" : "9ab928c9-c6ca-3dde-8cdf-d5457a2f12e0",
+                "name" : "UpdateAttribute",
+                "type" : "PROCESSOR"
+              },
+              "flowFileExpiration" : "0 sec",
+              "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
+              "identifier" : "6ab2ac84-5c65-3723-a3cc-7cabc925c3be",
+              "labelIndex" : 1,
+              "loadBalanceCompression" : "DO_NOT_COMPRESS",
+              "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+              "name" : "",
+              "partitioningAttribute" : "",
+              "prioritizers" : [ ],
+              "selectedRelationships" : [ "merged" ],
+              "source" : {
+                "comments" : "",
+                "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
+                "id" : "5900309f-912b-39b1-b265-ab7c2d27e3d3",
+                "name" : "MergeContent",
+                "type" : "PROCESSOR"
+              },
+              "zIndex" : 0
+            }, {
+              "backPressureDataSizeThreshold" : "1 GB",
+              "backPressureObjectThreshold" : 10000,
+              "bends" : [ ],
+              "componentType" : "CONNECTION",
+              "destination" : {
+                "comments" : "",
+                "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
                 "id" : "42eab463-ca95-3513-8330-b3d1f913660a",
                 "name" : "JsonToExcel",
                 "type" : "PROCESSOR"
               },
               "flowFileExpiration" : "0 sec",
               "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
-              "identifier" : "5dba637a-582b-3a16-a2a6-fa7437059b25",
+              "identifier" : "aacf2268-ac76-354e-a5d1-988c1163840e",
               "labelIndex" : 1,
               "loadBalanceCompression" : "DO_NOT_COMPRESS",
               "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -2209,36 +2239,6 @@
                 "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
                 "id" : "42eab463-ca95-3513-8330-b3d1f913660a",
                 "name" : "JsonToExcel",
-                "type" : "PROCESSOR"
-              },
-              "zIndex" : 0
-            }, {
-              "backPressureDataSizeThreshold" : "1 GB",
-              "backPressureObjectThreshold" : 10000,
-              "bends" : [ ],
-              "componentType" : "CONNECTION",
-              "destination" : {
-                "comments" : "",
-                "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
-                "id" : "9ab928c9-c6ca-3dde-8cdf-d5457a2f12e0",
-                "name" : "UpdateAttribute",
-                "type" : "PROCESSOR"
-              },
-              "flowFileExpiration" : "0 sec",
-              "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
-              "identifier" : "38f1d988-d60c-31e0-a531-e43b256c10dd",
-              "labelIndex" : 1,
-              "loadBalanceCompression" : "DO_NOT_COMPRESS",
-              "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-              "name" : "",
-              "partitioningAttribute" : "",
-              "prioritizers" : [ ],
-              "selectedRelationships" : [ "merged" ],
-              "source" : {
-                "comments" : "",
-                "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
-                "id" : "5900309f-912b-39b1-b265-ab7c2d27e3d3",
-                "name" : "MergeContent",
                 "type" : "PROCESSOR"
               },
               "zIndex" : 0
@@ -2398,7 +2398,7 @@
                 "y" : 232.0
               },
               "properties" : {
-                "filename" : "out_${now():format(\"HH_mm_ss_SSS\")}.xls",
+                "filename" : "timesheets_${now():format(\"HHmmss_SSS\")}",
                 "Store State" : "Do not store state",
                 "canonical-value-lookup-cache-size" : "100"
               },
@@ -2461,8 +2461,17 @@
                 "x" : 768.0,
                 "y" : 304.0
               },
-              "properties" : { },
-              "propertyDescriptors" : { },
+              "properties" : {
+                "excel-format" : "xlsx"
+              },
+              "propertyDescriptors" : {
+                "excel-format" : {
+                  "displayName" : "Format",
+                  "identifiesControllerService" : false,
+                  "name" : "excel-format",
+                  "sensitive" : false
+                }
+              },
               "runDurationMillis" : 0,
               "scheduledState" : "ENABLED",
               "schedulingPeriod" : "0 sec",
@@ -2519,109 +2528,6 @@
               "schedulingStrategy" : "TIMER_DRIVEN",
               "style" : { },
               "type" : "org.apache.nifi.processors.standard.LogMessage",
-              "yieldDuration" : "1 sec"
-            }, {
-              "autoTerminatedRelationships" : [ ],
-              "bulletinLevel" : "WARN",
-              "bundle" : {
-                "artifact" : "nifi-standard-nar",
-                "group" : "org.apache.nifi",
-                "version" : "1.11.4"
-              },
-              "comments" : "",
-              "componentType" : "PROCESSOR",
-              "concurrentlySchedulableTaskCount" : 1,
-              "executionNode" : "ALL",
-              "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
-              "identifier" : "efb06b7e-6c17-3c6e-b3bb-b232025dc1e8",
-              "name" : "MergeRecord",
-              "penaltyDuration" : "30 sec",
-              "position" : {
-                "x" : 504.0,
-                "y" : -176.0
-              },
-              "properties" : {
-                "Attribute Strategy" : "Keep Only Common Attributes",
-                "min-records" : "1",
-                "merge-strategy" : "Bin-Packing Algorithm",
-                "max-records" : "1000",
-                "min-bin-size" : "0 B",
-                "max.bin.count" : "10"
-              },
-              "propertyDescriptors" : {
-                "max-bin-age" : {
-                  "displayName" : "Max Bin Age",
-                  "identifiesControllerService" : false,
-                  "name" : "max-bin-age",
-                  "sensitive" : false
-                },
-                "correlation-attribute-name" : {
-                  "displayName" : "Correlation Attribute Name",
-                  "identifiesControllerService" : false,
-                  "name" : "correlation-attribute-name",
-                  "sensitive" : false
-                },
-                "Attribute Strategy" : {
-                  "displayName" : "Attribute Strategy",
-                  "identifiesControllerService" : false,
-                  "name" : "Attribute Strategy",
-                  "sensitive" : false
-                },
-                "min-records" : {
-                  "displayName" : "Minimum Number of Records",
-                  "identifiesControllerService" : false,
-                  "name" : "min-records",
-                  "sensitive" : false
-                },
-                "max-bin-size" : {
-                  "displayName" : "Maximum Bin Size",
-                  "identifiesControllerService" : false,
-                  "name" : "max-bin-size",
-                  "sensitive" : false
-                },
-                "record-writer" : {
-                  "displayName" : "Record Writer",
-                  "identifiesControllerService" : true,
-                  "name" : "record-writer",
-                  "sensitive" : false
-                },
-                "merge-strategy" : {
-                  "displayName" : "Merge Strategy",
-                  "identifiesControllerService" : false,
-                  "name" : "merge-strategy",
-                  "sensitive" : false
-                },
-                "record-reader" : {
-                  "displayName" : "Record Reader",
-                  "identifiesControllerService" : true,
-                  "name" : "record-reader",
-                  "sensitive" : false
-                },
-                "max-records" : {
-                  "displayName" : "Maximum Number of Records",
-                  "identifiesControllerService" : false,
-                  "name" : "max-records",
-                  "sensitive" : false
-                },
-                "min-bin-size" : {
-                  "displayName" : "Minimum Bin Size",
-                  "identifiesControllerService" : false,
-                  "name" : "min-bin-size",
-                  "sensitive" : false
-                },
-                "max.bin.count" : {
-                  "displayName" : "Maximum Number of Bins",
-                  "identifiesControllerService" : false,
-                  "name" : "max.bin.count",
-                  "sensitive" : false
-                }
-              },
-              "runDurationMillis" : 0,
-              "scheduledState" : "ENABLED",
-              "schedulingPeriod" : "0 sec",
-              "schedulingStrategy" : "TIMER_DRIVEN",
-              "style" : { },
-              "type" : "org.apache.nifi.processors.standard.MergeRecord",
               "yieldDuration" : "1 sec"
             }, {
               "autoTerminatedRelationships" : [ ],
