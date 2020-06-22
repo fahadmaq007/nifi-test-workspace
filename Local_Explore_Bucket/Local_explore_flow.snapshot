@@ -13,37 +13,7 @@
       "flowContents" : {
         "comments" : "",
         "componentType" : "PROCESS_GROUP",
-        "connections" : [ {
-          "backPressureDataSizeThreshold" : "1 GB",
-          "backPressureObjectThreshold" : 10000,
-          "bends" : [ ],
-          "componentType" : "CONNECTION",
-          "destination" : {
-            "comments" : "",
-            "groupId" : "448c9701-0cc4-3ffc-baa2-b4dc2e12c8e9",
-            "id" : "b6eff9fd-a27b-38d4-a5b6-a1eadb7f641c",
-            "name" : "TimesheetLogMessage",
-            "type" : "PROCESSOR"
-          },
-          "flowFileExpiration" : "0 sec",
-          "groupIdentifier" : "448c9701-0cc4-3ffc-baa2-b4dc2e12c8e9",
-          "identifier" : "6cd36991-6703-37e3-8e67-20f2b5406e7c",
-          "labelIndex" : 1,
-          "loadBalanceCompression" : "DO_NOT_COMPRESS",
-          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-          "name" : "",
-          "partitioningAttribute" : "",
-          "prioritizers" : [ ],
-          "selectedRelationships" : [ "success" ],
-          "source" : {
-            "comments" : "",
-            "groupId" : "448c9701-0cc4-3ffc-baa2-b4dc2e12c8e9",
-            "id" : "e19789e2-a8f0-3f37-9106-4b747046e044",
-            "name" : "ConsumerTimesheetKafka_2_0",
-            "type" : "PROCESSOR"
-          },
-          "zIndex" : 0
-        } ],
+        "connections" : [ ],
         "controllerServices" : [ ],
         "funnels" : [ ],
         "identifier" : "448c9701-0cc4-3ffc-baa2-b4dc2e12c8e9",
@@ -70,8 +40,8 @@
           "outputPorts" : [ ],
           "parameterContextName" : "Local Context",
           "position" : {
-            "x" : -144.0,
-            "y" : 136.0
+            "x" : -128.0,
+            "y" : -72.0
           },
           "processGroups" : [ {
             "comments" : "",
@@ -2136,8 +2106,8 @@
           "name" : "ConsumeTimesheetFromKafka",
           "outputPorts" : [ ],
           "position" : {
-            "x" : -144.0,
-            "y" : -96.0
+            "x" : -568.0,
+            "y" : -72.0
           },
           "processGroups" : [ {
             "comments" : "",
@@ -4383,13 +4353,13 @@
             "destination" : {
               "comments" : "",
               "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
-              "id" : "9ab928c9-c6ca-3dde-8cdf-d5457a2f12e0",
-              "name" : "UpdateAttribute",
+              "id" : "42eab463-ca95-3513-8330-b3d1f913660a",
+              "name" : "JsonToExcel",
               "type" : "PROCESSOR"
             },
             "flowFileExpiration" : "0 sec",
             "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
-            "identifier" : "6ab2ac84-5c65-3723-a3cc-7cabc925c3be",
+            "identifier" : "03236aaf-9486-3b00-be2c-5594622b8c45",
             "labelIndex" : 1,
             "loadBalanceCompression" : "DO_NOT_COMPRESS",
             "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -4402,36 +4372,6 @@
               "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
               "id" : "5900309f-912b-39b1-b265-ab7c2d27e3d3",
               "name" : "MergeContent",
-              "type" : "PROCESSOR"
-            },
-            "zIndex" : 0
-          }, {
-            "backPressureDataSizeThreshold" : "1 GB",
-            "backPressureObjectThreshold" : 10000,
-            "bends" : [ ],
-            "componentType" : "CONNECTION",
-            "destination" : {
-              "comments" : "",
-              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
-              "id" : "42eab463-ca95-3513-8330-b3d1f913660a",
-              "name" : "JsonToExcel",
-              "type" : "PROCESSOR"
-            },
-            "flowFileExpiration" : "0 sec",
-            "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
-            "identifier" : "aacf2268-ac76-354e-a5d1-988c1163840e",
-            "labelIndex" : 1,
-            "loadBalanceCompression" : "DO_NOT_COMPRESS",
-            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-            "name" : "",
-            "partitioningAttribute" : "",
-            "prioritizers" : [ ],
-            "selectedRelationships" : [ "success" ],
-            "source" : {
-              "comments" : "",
-              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
-              "id" : "9ab928c9-c6ca-3dde-8cdf-d5457a2f12e0",
-              "name" : "UpdateAttribute",
               "type" : "PROCESSOR"
             },
             "zIndex" : 0
@@ -4462,6 +4402,36 @@
               "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
               "id" : "d6abe58b-b70f-36bd-8fb2-acc839b5162d",
               "name" : "FlattenJson",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
+              "id" : "5da361f7-1cee-337a-a4e8-e12bddffe8e2",
+              "name" : "LogMessage",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
+            "identifier" : "3e91c507-6544-34d8-bbbd-fea20ceb2406",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "failure" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
+              "id" : "42eab463-ca95-3513-8330-b3d1f913660a",
+              "name" : "JsonToExcel",
               "type" : "PROCESSOR"
             },
             "zIndex" : 0
@@ -4536,76 +4506,12 @@
           "outputPorts" : [ ],
           "parameterContextName" : "Local Context",
           "position" : {
-            "x" : -144.0,
-            "y" : 608.0
+            "x" : -568.0,
+            "y" : 416.0
           },
           "processGroups" : [ ],
           "processors" : [ {
             "autoTerminatedRelationships" : [ ],
-            "bulletinLevel" : "WARN",
-            "bundle" : {
-              "artifact" : "nifi-update-attribute-nar",
-              "group" : "org.apache.nifi",
-              "version" : "1.11.4"
-            },
-            "comments" : "",
-            "componentType" : "PROCESSOR",
-            "concurrentlySchedulableTaskCount" : 1,
-            "executionNode" : "ALL",
-            "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
-            "identifier" : "9ab928c9-c6ca-3dde-8cdf-d5457a2f12e0",
-            "name" : "UpdateAttribute",
-            "penaltyDuration" : "30 sec",
-            "position" : {
-              "x" : 848.0,
-              "y" : -16.0
-            },
-            "properties" : {
-              "filename" : "timesheets_${now():format(\"HHmmss_SSS\")}",
-              "Store State" : "Do not store state",
-              "canonical-value-lookup-cache-size" : "100"
-            },
-            "propertyDescriptors" : {
-              "Delete Attributes Expression" : {
-                "displayName" : "Delete Attributes Expression",
-                "identifiesControllerService" : false,
-                "name" : "Delete Attributes Expression",
-                "sensitive" : false
-              },
-              "filename" : {
-                "displayName" : "filename",
-                "identifiesControllerService" : false,
-                "name" : "filename",
-                "sensitive" : false
-              },
-              "Store State" : {
-                "displayName" : "Store State",
-                "identifiesControllerService" : false,
-                "name" : "Store State",
-                "sensitive" : false
-              },
-              "canonical-value-lookup-cache-size" : {
-                "displayName" : "Cache Value Lookup Cache Size",
-                "identifiesControllerService" : false,
-                "name" : "canonical-value-lookup-cache-size",
-                "sensitive" : false
-              },
-              "Stateful Variables Initial Value" : {
-                "displayName" : "Stateful Variables Initial Value",
-                "identifiesControllerService" : false,
-                "name" : "Stateful Variables Initial Value",
-                "sensitive" : false
-              }
-            },
-            "runDurationMillis" : 0,
-            "scheduledState" : "ENABLED",
-            "schedulingPeriod" : "0 sec",
-            "schedulingStrategy" : "TIMER_DRIVEN",
-            "style" : { },
-            "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
-            "yieldDuration" : "1 sec"
-          }, {
-            "autoTerminatedRelationships" : [ "failure" ],
             "bulletinLevel" : "WARN",
             "bundle" : {
               "artifact" : "nifi-commons-nar",
@@ -4621,13 +4527,34 @@
             "name" : "JsonToExcel",
             "penaltyDuration" : "30 sec",
             "position" : {
-              "x" : 848.0,
-              "y" : 208.0
+              "x" : 760.0,
+              "y" : 192.0
             },
             "properties" : {
+              "filename" : "Donuts_${now():format('hhMMss_SSS')}",
+              "ignoreColumns" : "id, type",
+              "segregateSheetsBy" : "type",
               "excel-format" : "xlsx"
             },
             "propertyDescriptors" : {
+              "filename" : {
+                "displayName" : "File Name",
+                "identifiesControllerService" : false,
+                "name" : "filename",
+                "sensitive" : false
+              },
+              "ignoreColumns" : {
+                "displayName" : "Ignore Columns",
+                "identifiesControllerService" : false,
+                "name" : "ignoreColumns",
+                "sensitive" : false
+              },
+              "segregateSheetsBy" : {
+                "displayName" : "Segregate Sheets By",
+                "identifiesControllerService" : false,
+                "name" : "segregateSheetsBy",
+                "sensitive" : false
+              },
               "excel-format" : {
                 "displayName" : "Format",
                 "identifiesControllerService" : false,
@@ -4688,6 +4615,56 @@
             "type" : "org.apache.nifi.processors.standard.FlattenJson",
             "yieldDuration" : "1 sec"
           }, {
+            "autoTerminatedRelationships" : [ "success" ],
+            "bulletinLevel" : "WARN",
+            "bundle" : {
+              "artifact" : "nifi-standard-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.11.4"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "ALL",
+            "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
+            "identifier" : "5da361f7-1cee-337a-a4e8-e12bddffe8e2",
+            "name" : "LogMessage",
+            "penaltyDuration" : "30 sec",
+            "position" : {
+              "x" : 568.0,
+              "y" : 392.0
+            },
+            "properties" : {
+              "log-level" : "info"
+            },
+            "propertyDescriptors" : {
+              "log-message" : {
+                "displayName" : "Log message",
+                "identifiesControllerService" : false,
+                "name" : "log-message",
+                "sensitive" : false
+              },
+              "log-level" : {
+                "displayName" : "Log Level",
+                "identifiesControllerService" : false,
+                "name" : "log-level",
+                "sensitive" : false
+              },
+              "log-prefix" : {
+                "displayName" : "Log prefix",
+                "identifiesControllerService" : false,
+                "name" : "log-prefix",
+                "sensitive" : false
+              }
+            },
+            "runDurationMillis" : 0,
+            "scheduledState" : "ENABLED",
+            "schedulingPeriod" : "0 sec",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "org.apache.nifi.processors.standard.LogMessage",
+            "yieldDuration" : "1 sec"
+          }, {
             "autoTerminatedRelationships" : [ ],
             "bulletinLevel" : "WARN",
             "bundle" : {
@@ -4711,12 +4688,12 @@
               "Keep Source File" : "true",
               "Minimum File Age" : "0 sec",
               "Polling Interval" : "0 sec",
-              "Input Directory" : "#{test-files-dir}/eGRN/",
+              "Input Directory" : "#{test-files-dir}/random-files/",
               "Batch Size" : "10",
               "Minimum File Size" : "1 B",
               "Ignore Hidden Files" : "true",
               "Recurse Subdirectories" : "true",
-              "File Filter" : "(plant_delivery_expected.json)"
+              "File Filter" : "(.*)"
             },
             "propertyDescriptors" : {
               "Keep Source File" : {
@@ -4816,12 +4793,12 @@
             "name" : "PutFile",
             "penaltyDuration" : "30 sec",
             "position" : {
-              "x" : 848.0,
-              "y" : 408.0
+              "x" : 976.0,
+              "y" : 392.0
             },
             "properties" : {
               "Create Missing Directories" : "true",
-              "Directory" : "#{test-files-dir}/output-csv",
+              "Directory" : "#{test-files-dir}/output",
               "Conflict Resolution Strategy" : "fail"
             },
             "propertyDescriptors" : {
@@ -4898,8 +4875,8 @@
             "name" : "MergeContent",
             "penaltyDuration" : "30 sec",
             "position" : {
-              "x" : 208.0,
-              "y" : 400.0
+              "x" : 760.0,
+              "y" : -24.0
             },
             "properties" : {
               "Keep Path" : "false",
@@ -5290,8 +5267,8 @@
           "outputPorts" : [ ],
           "parameterContextName" : "Local Context",
           "position" : {
-            "x" : -144.0,
-            "y" : 376.0
+            "x" : -568.0,
+            "y" : 168.0
           },
           "processGroups" : [ ],
           "processors" : [ {
@@ -5986,241 +5963,7 @@
           "remoteProcessGroups" : [ ],
           "variables" : { }
         } ],
-        "processors" : [ {
-          "autoTerminatedRelationships" : [ "success" ],
-          "bulletinLevel" : "WARN",
-          "bundle" : {
-            "artifact" : "nifi-standard-nar",
-            "group" : "org.apache.nifi",
-            "version" : "1.11.4"
-          },
-          "comments" : "",
-          "componentType" : "PROCESSOR",
-          "concurrentlySchedulableTaskCount" : 1,
-          "executionNode" : "ALL",
-          "groupIdentifier" : "448c9701-0cc4-3ffc-baa2-b4dc2e12c8e9",
-          "identifier" : "b6eff9fd-a27b-38d4-a5b6-a1eadb7f641c",
-          "name" : "TimesheetLogMessage",
-          "penaltyDuration" : "30 sec",
-          "position" : {
-            "x" : -848.0,
-            "y" : 160.0
-          },
-          "properties" : {
-            "log-level" : "info"
-          },
-          "propertyDescriptors" : {
-            "log-message" : {
-              "displayName" : "Log message",
-              "identifiesControllerService" : false,
-              "name" : "log-message",
-              "sensitive" : false
-            },
-            "log-level" : {
-              "displayName" : "Log Level",
-              "identifiesControllerService" : false,
-              "name" : "log-level",
-              "sensitive" : false
-            },
-            "log-prefix" : {
-              "displayName" : "Log prefix",
-              "identifiesControllerService" : false,
-              "name" : "log-prefix",
-              "sensitive" : false
-            }
-          },
-          "runDurationMillis" : 0,
-          "scheduledState" : "ENABLED",
-          "schedulingPeriod" : "0 sec",
-          "schedulingStrategy" : "TIMER_DRIVEN",
-          "style" : { },
-          "type" : "org.apache.nifi.processors.standard.LogMessage",
-          "yieldDuration" : "1 sec"
-        }, {
-          "autoTerminatedRelationships" : [ ],
-          "bulletinLevel" : "WARN",
-          "bundle" : {
-            "artifact" : "nifi-kafka-2-0-nar",
-            "group" : "org.apache.nifi",
-            "version" : "1.11.4"
-          },
-          "comments" : "",
-          "componentType" : "PROCESSOR",
-          "concurrentlySchedulableTaskCount" : 1,
-          "executionNode" : "ALL",
-          "groupIdentifier" : "448c9701-0cc4-3ffc-baa2-b4dc2e12c8e9",
-          "identifier" : "e19789e2-a8f0-3f37-9106-4b747046e044",
-          "name" : "ConsumerTimesheetKafka_2_0",
-          "penaltyDuration" : "30 sec",
-          "position" : {
-            "x" : -848.0,
-            "y" : -104.0
-          },
-          "properties" : {
-            "header-name-regex" : "(kafka.*)",
-            "max.poll.records" : "10000",
-            "group.id" : "#{topic.timesheet}.group",
-            "bootstrap.servers" : "#{kafka.broker}",
-            "topic_type" : "names",
-            "security.protocol" : "PLAINTEXT",
-            "max-uncommit-offset-wait" : "1 secs",
-            "sasl.mechanism" : "GSSAPI",
-            "sasl.token.auth" : "false",
-            "honor-transactions" : "true",
-            "Communications Timeout" : "60 secs",
-            "topic" : "#{topic.timesheet}",
-            "message-header-encoding" : "UTF-8",
-            "key-attribute-encoding" : "utf-8",
-            "auto.offset.reset" : "latest"
-          },
-          "propertyDescriptors" : {
-            "header-name-regex" : {
-              "displayName" : "Headers to Add as Attributes (Regex)",
-              "identifiesControllerService" : false,
-              "name" : "header-name-regex",
-              "sensitive" : false
-            },
-            "sasl.username" : {
-              "displayName" : "Username",
-              "identifiesControllerService" : false,
-              "name" : "sasl.username",
-              "sensitive" : false
-            },
-            "max.poll.records" : {
-              "displayName" : "Max Poll Records",
-              "identifiesControllerService" : false,
-              "name" : "max.poll.records",
-              "sensitive" : false
-            },
-            "group.id" : {
-              "displayName" : "Group ID",
-              "identifiesControllerService" : false,
-              "name" : "group.id",
-              "sensitive" : false
-            },
-            "bootstrap.servers" : {
-              "displayName" : "Kafka Brokers",
-              "identifiesControllerService" : false,
-              "name" : "bootstrap.servers",
-              "sensitive" : false
-            },
-            "topic_type" : {
-              "displayName" : "Topic Name Format",
-              "identifiesControllerService" : false,
-              "name" : "topic_type",
-              "sensitive" : false
-            },
-            "sasl.kerberos.principal" : {
-              "displayName" : "Kerberos Principal",
-              "identifiesControllerService" : false,
-              "name" : "sasl.kerberos.principal",
-              "sensitive" : false
-            },
-            "sasl.kerberos.service.name" : {
-              "displayName" : "Kerberos Service Name",
-              "identifiesControllerService" : false,
-              "name" : "sasl.kerberos.service.name",
-              "sensitive" : false
-            },
-            "security.protocol" : {
-              "displayName" : "Security Protocol",
-              "identifiesControllerService" : false,
-              "name" : "security.protocol",
-              "sensitive" : false
-            },
-            "kerberos-credentials-service" : {
-              "displayName" : "Kerberos Credentials Service",
-              "identifiesControllerService" : true,
-              "name" : "kerberos-credentials-service",
-              "sensitive" : false
-            },
-            "ssl.context.service" : {
-              "displayName" : "SSL Context Service",
-              "identifiesControllerService" : true,
-              "name" : "ssl.context.service",
-              "sensitive" : false
-            },
-            "max-uncommit-offset-wait" : {
-              "displayName" : "Max Uncommitted Time",
-              "identifiesControllerService" : false,
-              "name" : "max-uncommit-offset-wait",
-              "sensitive" : false
-            },
-            "sasl.mechanism" : {
-              "displayName" : "SASL Mechanism",
-              "identifiesControllerService" : false,
-              "name" : "sasl.mechanism",
-              "sensitive" : false
-            },
-            "sasl.token.auth" : {
-              "displayName" : "Token Auth",
-              "identifiesControllerService" : false,
-              "name" : "sasl.token.auth",
-              "sensitive" : false
-            },
-            "sasl.kerberos.keytab" : {
-              "displayName" : "Kerberos Keytab",
-              "identifiesControllerService" : false,
-              "name" : "sasl.kerberos.keytab",
-              "sensitive" : false
-            },
-            "honor-transactions" : {
-              "displayName" : "Honor Transactions",
-              "identifiesControllerService" : false,
-              "name" : "honor-transactions",
-              "sensitive" : false
-            },
-            "Communications Timeout" : {
-              "displayName" : "Communications Timeout",
-              "identifiesControllerService" : false,
-              "name" : "Communications Timeout",
-              "sensitive" : false
-            },
-            "topic" : {
-              "displayName" : "Topic Name(s)",
-              "identifiesControllerService" : false,
-              "name" : "topic",
-              "sensitive" : false
-            },
-            "message-header-encoding" : {
-              "displayName" : "Message Header Encoding",
-              "identifiesControllerService" : false,
-              "name" : "message-header-encoding",
-              "sensitive" : false
-            },
-            "sasl.password" : {
-              "displayName" : "Password",
-              "identifiesControllerService" : false,
-              "name" : "sasl.password",
-              "sensitive" : true
-            },
-            "message-demarcator" : {
-              "displayName" : "Message Demarcator",
-              "identifiesControllerService" : false,
-              "name" : "message-demarcator",
-              "sensitive" : false
-            },
-            "key-attribute-encoding" : {
-              "displayName" : "Key Attribute Encoding",
-              "identifiesControllerService" : false,
-              "name" : "key-attribute-encoding",
-              "sensitive" : false
-            },
-            "auto.offset.reset" : {
-              "displayName" : "Offset Reset",
-              "identifiesControllerService" : false,
-              "name" : "auto.offset.reset",
-              "sensitive" : false
-            }
-          },
-          "runDurationMillis" : 0,
-          "scheduledState" : "ENABLED",
-          "schedulingPeriod" : "0 sec",
-          "schedulingStrategy" : "TIMER_DRIVEN",
-          "style" : { },
-          "type" : "org.apache.nifi.processors.kafka.pubsub.ConsumeKafka_2_0",
-          "yieldDuration" : "1 sec"
-        } ],
+        "processors" : [ ],
         "remoteProcessGroups" : [ ],
         "variables" : {
           "topic.test_topic" : "test-topic"
