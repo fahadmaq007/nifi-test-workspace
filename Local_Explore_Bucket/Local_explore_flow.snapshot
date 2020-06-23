@@ -3126,14 +3126,14 @@
                   "group" : "org.apache.nifi",
                   "version" : "1.11.4"
                 },
-                "type" : "org.apache.nifi.ssl.SSLContextService"
+                "type" : "org.apache.nifi.ssl.RestrictedSSLContextService"
               }, {
                 "bundle" : {
                   "artifact" : "nifi-standard-services-api-nar",
                   "group" : "org.apache.nifi",
                   "version" : "1.11.4"
                 },
-                "type" : "org.apache.nifi.ssl.RestrictedSSLContextService"
+                "type" : "org.apache.nifi.ssl.SSLContextService"
               } ],
               "groupIdentifier" : "2f77c1f0-3e13-343a-8837-b8eee6a17ace",
               "identifier" : "f38ecd7b-38ee-31f1-a48a-0bea49617e25",
@@ -4353,6 +4353,36 @@
             "destination" : {
               "comments" : "",
               "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
+              "id" : "05e0d18d-360e-3908-b768-5165473b94d2",
+              "name" : "SplitJson",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
+            "identifier" : "fc156b74-daae-3e98-8a5b-9fed7bea45ae",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "success" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
+              "id" : "203b4333-681e-312d-bc4a-c0677cef3eb8",
+              "name" : "GetFile",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
               "id" : "42eab463-ca95-3513-8330-b3d1f913660a",
               "name" : "JsonToExcel",
               "type" : "PROCESSOR"
@@ -4372,6 +4402,66 @@
               "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
               "id" : "5900309f-912b-39b1-b265-ab7c2d27e3d3",
               "name" : "MergeContent",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
+              "id" : "d6abe58b-b70f-36bd-8fb2-acc839b5162d",
+              "name" : "FlattenJson",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
+            "identifier" : "94b92869-527b-3c70-afc6-c0aa3dd209a2",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "split" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
+              "id" : "05e0d18d-360e-3908-b768-5165473b94d2",
+              "name" : "SplitJson",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
+              "id" : "5da361f7-1cee-337a-a4e8-e12bddffe8e2",
+              "name" : "LogMessage",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
+            "identifier" : "bb855575-fe0b-3540-b6b3-ca58e1e75c5b",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "failure" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
+              "id" : "05e0d18d-360e-3908-b768-5165473b94d2",
+              "name" : "SplitJson",
               "type" : "PROCESSOR"
             },
             "zIndex" : 0
@@ -4443,36 +4533,6 @@
             "destination" : {
               "comments" : "",
               "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
-              "id" : "d6abe58b-b70f-36bd-8fb2-acc839b5162d",
-              "name" : "FlattenJson",
-              "type" : "PROCESSOR"
-            },
-            "flowFileExpiration" : "0 sec",
-            "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
-            "identifier" : "8c9042cb-29bc-3a57-84da-785f963cf41c",
-            "labelIndex" : 1,
-            "loadBalanceCompression" : "DO_NOT_COMPRESS",
-            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-            "name" : "",
-            "partitioningAttribute" : "",
-            "prioritizers" : [ ],
-            "selectedRelationships" : [ "success" ],
-            "source" : {
-              "comments" : "",
-              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
-              "id" : "203b4333-681e-312d-bc4a-c0677cef3eb8",
-              "name" : "GetFile",
-              "type" : "PROCESSOR"
-            },
-            "zIndex" : 0
-          }, {
-            "backPressureDataSizeThreshold" : "1 GB",
-            "backPressureObjectThreshold" : 10000,
-            "bends" : [ ],
-            "componentType" : "CONNECTION",
-            "destination" : {
-              "comments" : "",
-              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
               "id" : "00c84188-13be-33a3-b1e6-fe3928d81274",
               "name" : "PutFile",
               "type" : "PROCESSOR"
@@ -4527,8 +4587,8 @@
             "name" : "JsonToExcel",
             "penaltyDuration" : "30 sec",
             "position" : {
-              "x" : 760.0,
-              "y" : 192.0
+              "x" : 208.0,
+              "y" : 760.0
             },
             "properties" : {
               "filename" : "Donuts_${now():format('hhMMss_SSS')}",
@@ -4587,7 +4647,7 @@
             "penaltyDuration" : "30 sec",
             "position" : {
               "x" : 208.0,
-              "y" : 176.0
+              "y" : 384.0
             },
             "properties" : {
               "flatten-mode" : "normal",
@@ -4631,8 +4691,8 @@
             "name" : "LogMessage",
             "penaltyDuration" : "30 sec",
             "position" : {
-              "x" : 568.0,
-              "y" : 392.0
+              "x" : 824.0,
+              "y" : 400.0
             },
             "properties" : {
               "log-level" : "info"
@@ -4693,7 +4753,7 @@
               "Minimum File Size" : "1 B",
               "Ignore Hidden Files" : "true",
               "Recurse Subdirectories" : "true",
-              "File Filter" : "(.*)"
+              "File Filter" : "(donuts.json)"
             },
             "propertyDescriptors" : {
               "Keep Source File" : {
@@ -4771,10 +4831,55 @@
             },
             "runDurationMillis" : 0,
             "scheduledState" : "ENABLED",
-            "schedulingPeriod" : "0 sec",
+            "schedulingPeriod" : "1 sec",
             "schedulingStrategy" : "TIMER_DRIVEN",
             "style" : { },
             "type" : "org.apache.nifi.processors.standard.GetFile",
+            "yieldDuration" : "1 sec"
+          }, {
+            "autoTerminatedRelationships" : [ "original" ],
+            "bulletinLevel" : "WARN",
+            "bundle" : {
+              "artifact" : "nifi-standard-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.11.4"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "ALL",
+            "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
+            "identifier" : "05e0d18d-360e-3908-b768-5165473b94d2",
+            "name" : "SplitJson",
+            "penaltyDuration" : "30 sec",
+            "position" : {
+              "x" : 208.0,
+              "y" : 184.0
+            },
+            "properties" : {
+              "Null Value Representation" : "empty string",
+              "JsonPath Expression" : "$.*"
+            },
+            "propertyDescriptors" : {
+              "Null Value Representation" : {
+                "displayName" : "Null Value Representation",
+                "identifiesControllerService" : false,
+                "name" : "Null Value Representation",
+                "sensitive" : false
+              },
+              "JsonPath Expression" : {
+                "displayName" : "JsonPath Expression",
+                "identifiesControllerService" : false,
+                "name" : "JsonPath Expression",
+                "sensitive" : false
+              }
+            },
+            "runDurationMillis" : 0,
+            "scheduledState" : "ENABLED",
+            "schedulingPeriod" : "0 sec",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "org.apache.nifi.processors.standard.SplitJson",
             "yieldDuration" : "1 sec"
           }, {
             "autoTerminatedRelationships" : [ "success", "failure" ],
@@ -4793,8 +4898,8 @@
             "name" : "PutFile",
             "penaltyDuration" : "30 sec",
             "position" : {
-              "x" : 976.0,
-              "y" : 392.0
+              "x" : 656.0,
+              "y" : 752.0
             },
             "properties" : {
               "Create Missing Directories" : "true",
@@ -4875,15 +4980,15 @@
             "name" : "MergeContent",
             "penaltyDuration" : "30 sec",
             "position" : {
-              "x" : 760.0,
-              "y" : -24.0
+              "x" : 208.0,
+              "y" : 568.0
             },
             "properties" : {
               "Keep Path" : "false",
               "Merge Strategy" : "Bin-Packing Algorithm",
               "Attribute Strategy" : "Keep All Unique Attributes",
               "Compression Level" : "1",
-              "Maximum Number of Entries" : "1000",
+              "Maximum Number of Entries" : "50",
               "Minimum Group Size" : "0 B",
               "Maximum number of Bins" : "5",
               "Tar Modified Time" : "${file.lastModifiedTime}",
@@ -5011,7 +5116,7 @@
             "schedulingStrategy" : "TIMER_DRIVEN",
             "style" : { },
             "type" : "org.apache.nifi.processors.standard.MergeContent",
-            "yieldDuration" : "1 sec"
+            "yieldDuration" : "0 sec"
           } ],
           "remoteProcessGroups" : [ ],
           "variables" : { }
