@@ -1983,6 +1983,473 @@
             "componentType" : "CONNECTION",
             "destination" : {
               "comments" : "",
+              "groupId" : "90177c61-fc75-3ee1-8c00-315f5fbba948",
+              "id" : "7a3242ab-5819-38cb-8a84-168c269531e0",
+              "name" : "LogMessage",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "90177c61-fc75-3ee1-8c00-315f5fbba948",
+            "identifier" : "3ee6ef85-9d8b-3e4c-9396-a70f04630bc5",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "success" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "90177c61-fc75-3ee1-8c00-315f5fbba948",
+              "id" : "e805b90f-614b-3994-8343-7e348cd58e4e",
+              "name" : "PublishKafka",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "90177c61-fc75-3ee1-8c00-315f5fbba948",
+              "id" : "e805b90f-614b-3994-8343-7e348cd58e4e",
+              "name" : "PublishKafka",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "90177c61-fc75-3ee1-8c00-315f5fbba948",
+            "identifier" : "b1b0a5fd-7c15-3f02-9697-a3804b018632",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "success" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "90177c61-fc75-3ee1-8c00-315f5fbba948",
+              "id" : "15dcf100-ae0b-33ce-bba7-7ea46d6ee40c",
+              "name" : "GetFTP",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          } ],
+          "controllerServices" : [ ],
+          "funnels" : [ ],
+          "groupIdentifier" : "448c9701-0cc4-3ffc-baa2-b4dc2e12c8e9",
+          "identifier" : "90177c61-fc75-3ee1-8c00-315f5fbba948",
+          "inputPorts" : [ ],
+          "labels" : [ ],
+          "name" : "GetFTPAndPublishToKafka",
+          "outputPorts" : [ ],
+          "position" : {
+            "x" : -128.0,
+            "y" : 168.0
+          },
+          "processGroups" : [ ],
+          "processors" : [ {
+            "autoTerminatedRelationships" : [ ],
+            "bulletinLevel" : "WARN",
+            "bundle" : {
+              "artifact" : "nifi-standard-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.11.4"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "ALL",
+            "groupIdentifier" : "90177c61-fc75-3ee1-8c00-315f5fbba948",
+            "identifier" : "15dcf100-ae0b-33ce-bba7-7ea46d6ee40c",
+            "name" : "GetFTP",
+            "penaltyDuration" : "30 sec",
+            "position" : {
+              "x" : -1216.0,
+              "y" : 208.0
+            },
+            "properties" : {
+              "Ignore Dotted Files" : "true",
+              "Port" : "#{ftp.port}",
+              "Max Selects" : "100",
+              "Proxy Type" : "DIRECT",
+              "Connection Mode" : "Passive",
+              "Connection Timeout" : "30 sec",
+              "follow-symlink" : "false",
+              "Internal Buffer Size" : "16KB",
+              "Search Recursively" : "false",
+              "Password" : "#{ftp.password}",
+              "Remote Poll Batch Size" : "5000",
+              "Polling Interval" : "2 sec",
+              "Hostname" : "#{ftp.server}",
+              "ftp-use-utf8" : "false",
+              "Data Timeout" : "30 sec",
+              "Transfer Mode" : "Binary",
+              "Username" : "#{ftp.username}",
+              "Use Natural Ordering" : "false",
+              "Delete Original" : "true"
+            },
+            "propertyDescriptors" : {
+              "Proxy Host" : {
+                "displayName" : "Proxy Host",
+                "identifiesControllerService" : false,
+                "name" : "Proxy Host",
+                "sensitive" : false
+              },
+              "Http Proxy Password" : {
+                "displayName" : "Http Proxy Password",
+                "identifiesControllerService" : false,
+                "name" : "Http Proxy Password",
+                "sensitive" : true
+              },
+              "Ignore Dotted Files" : {
+                "displayName" : "Ignore Dotted Files",
+                "identifiesControllerService" : false,
+                "name" : "Ignore Dotted Files",
+                "sensitive" : false
+              },
+              "Port" : {
+                "displayName" : "Port",
+                "identifiesControllerService" : false,
+                "name" : "Port",
+                "sensitive" : false
+              },
+              "proxy-configuration-service" : {
+                "displayName" : "Proxy Configuration Service",
+                "identifiesControllerService" : true,
+                "name" : "proxy-configuration-service",
+                "sensitive" : false
+              },
+              "Max Selects" : {
+                "displayName" : "Max Selects",
+                "identifiesControllerService" : false,
+                "name" : "Max Selects",
+                "sensitive" : false
+              },
+              "Proxy Type" : {
+                "displayName" : "Proxy Type",
+                "identifiesControllerService" : false,
+                "name" : "Proxy Type",
+                "sensitive" : false
+              },
+              "Connection Mode" : {
+                "displayName" : "Connection Mode",
+                "identifiesControllerService" : false,
+                "name" : "Connection Mode",
+                "sensitive" : false
+              },
+              "Connection Timeout" : {
+                "displayName" : "Connection Timeout",
+                "identifiesControllerService" : false,
+                "name" : "Connection Timeout",
+                "sensitive" : false
+              },
+              "Path Filter Regex" : {
+                "displayName" : "Path Filter Regex",
+                "identifiesControllerService" : false,
+                "name" : "Path Filter Regex",
+                "sensitive" : false
+              },
+              "follow-symlink" : {
+                "displayName" : "Follow symlink",
+                "identifiesControllerService" : false,
+                "name" : "follow-symlink",
+                "sensitive" : false
+              },
+              "Internal Buffer Size" : {
+                "displayName" : "Internal Buffer Size",
+                "identifiesControllerService" : false,
+                "name" : "Internal Buffer Size",
+                "sensitive" : false
+              },
+              "Search Recursively" : {
+                "displayName" : "Search Recursively",
+                "identifiesControllerService" : false,
+                "name" : "Search Recursively",
+                "sensitive" : false
+              },
+              "Password" : {
+                "displayName" : "Password",
+                "identifiesControllerService" : false,
+                "name" : "Password",
+                "sensitive" : true
+              },
+              "File Filter Regex" : {
+                "displayName" : "File Filter Regex",
+                "identifiesControllerService" : false,
+                "name" : "File Filter Regex",
+                "sensitive" : false
+              },
+              "Remote Poll Batch Size" : {
+                "displayName" : "Remote Poll Batch Size",
+                "identifiesControllerService" : false,
+                "name" : "Remote Poll Batch Size",
+                "sensitive" : false
+              },
+              "Polling Interval" : {
+                "displayName" : "Polling Interval",
+                "identifiesControllerService" : false,
+                "name" : "Polling Interval",
+                "sensitive" : false
+              },
+              "Http Proxy Username" : {
+                "displayName" : "Http Proxy Username",
+                "identifiesControllerService" : false,
+                "name" : "Http Proxy Username",
+                "sensitive" : false
+              },
+              "Hostname" : {
+                "displayName" : "Hostname",
+                "identifiesControllerService" : false,
+                "name" : "Hostname",
+                "sensitive" : false
+              },
+              "Remote Path" : {
+                "displayName" : "Remote Path",
+                "identifiesControllerService" : false,
+                "name" : "Remote Path",
+                "sensitive" : false
+              },
+              "Proxy Port" : {
+                "displayName" : "Proxy Port",
+                "identifiesControllerService" : false,
+                "name" : "Proxy Port",
+                "sensitive" : false
+              },
+              "ftp-use-utf8" : {
+                "displayName" : "Use UTF-8 Encoding",
+                "identifiesControllerService" : false,
+                "name" : "ftp-use-utf8",
+                "sensitive" : false
+              },
+              "Data Timeout" : {
+                "displayName" : "Data Timeout",
+                "identifiesControllerService" : false,
+                "name" : "Data Timeout",
+                "sensitive" : false
+              },
+              "Transfer Mode" : {
+                "displayName" : "Transfer Mode",
+                "identifiesControllerService" : false,
+                "name" : "Transfer Mode",
+                "sensitive" : false
+              },
+              "Username" : {
+                "displayName" : "Username",
+                "identifiesControllerService" : false,
+                "name" : "Username",
+                "sensitive" : false
+              },
+              "Use Natural Ordering" : {
+                "displayName" : "Use Natural Ordering",
+                "identifiesControllerService" : false,
+                "name" : "Use Natural Ordering",
+                "sensitive" : false
+              },
+              "Delete Original" : {
+                "displayName" : "Delete Original",
+                "identifiesControllerService" : false,
+                "name" : "Delete Original",
+                "sensitive" : false
+              }
+            },
+            "runDurationMillis" : 0,
+            "scheduledState" : "ENABLED",
+            "schedulingPeriod" : "10 sec",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "org.apache.nifi.processors.standard.GetFTP",
+            "yieldDuration" : "1 sec"
+          }, {
+            "autoTerminatedRelationships" : [ "failure" ],
+            "bulletinLevel" : "WARN",
+            "bundle" : {
+              "artifact" : "nifi-kafka-0-9-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.11.4"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "ALL",
+            "groupIdentifier" : "90177c61-fc75-3ee1-8c00-315f5fbba948",
+            "identifier" : "e805b90f-614b-3994-8343-7e348cd58e4e",
+            "name" : "PublishKafka",
+            "penaltyDuration" : "30 sec",
+            "position" : {
+              "x" : -1216.0,
+              "y" : 440.0
+            },
+            "properties" : {
+              "compression.type" : "none",
+              "ack.wait.time" : "5 secs",
+              "acks" : "0",
+              "bootstrap.servers" : "#{kafka.broker}",
+              "security.protocol" : "PLAINTEXT",
+              "max.request.size" : "1 MB",
+              "max.block.ms" : "5 sec",
+              "partitioner.class" : "org.apache.kafka.clients.producer.internals.DefaultPartitioner",
+              "topic" : "#{topic.plant_delivery}",
+              "key-attribute-encoding" : "utf-8"
+            },
+            "propertyDescriptors" : {
+              "compression.type" : {
+                "displayName" : "Compression Type",
+                "identifiesControllerService" : false,
+                "name" : "compression.type",
+                "sensitive" : false
+              },
+              "ack.wait.time" : {
+                "displayName" : "Acknowledgment Wait Time",
+                "identifiesControllerService" : false,
+                "name" : "ack.wait.time",
+                "sensitive" : false
+              },
+              "acks" : {
+                "displayName" : "Delivery Guarantee",
+                "identifiesControllerService" : false,
+                "name" : "acks",
+                "sensitive" : false
+              },
+              "bootstrap.servers" : {
+                "displayName" : "Kafka Brokers",
+                "identifiesControllerService" : false,
+                "name" : "bootstrap.servers",
+                "sensitive" : false
+              },
+              "sasl.kerberos.service.name" : {
+                "displayName" : "Kerberos Service Name",
+                "identifiesControllerService" : false,
+                "name" : "sasl.kerberos.service.name",
+                "sensitive" : false
+              },
+              "security.protocol" : {
+                "displayName" : "Security Protocol",
+                "identifiesControllerService" : false,
+                "name" : "security.protocol",
+                "sensitive" : false
+              },
+              "ssl.context.service" : {
+                "displayName" : "SSL Context Service",
+                "identifiesControllerService" : true,
+                "name" : "ssl.context.service",
+                "sensitive" : false
+              },
+              "max.request.size" : {
+                "displayName" : "Max Request Size",
+                "identifiesControllerService" : false,
+                "name" : "max.request.size",
+                "sensitive" : false
+              },
+              "kafka-key" : {
+                "displayName" : "Kafka Key",
+                "identifiesControllerService" : false,
+                "name" : "kafka-key",
+                "sensitive" : false
+              },
+              "max.block.ms" : {
+                "displayName" : "Max Metadata Wait Time",
+                "identifiesControllerService" : false,
+                "name" : "max.block.ms",
+                "sensitive" : false
+              },
+              "partitioner.class" : {
+                "displayName" : "Partitioner class",
+                "identifiesControllerService" : false,
+                "name" : "partitioner.class",
+                "sensitive" : false
+              },
+              "topic" : {
+                "displayName" : "Topic Name",
+                "identifiesControllerService" : false,
+                "name" : "topic",
+                "sensitive" : false
+              },
+              "message-demarcator" : {
+                "displayName" : "Message Demarcator",
+                "identifiesControllerService" : false,
+                "name" : "message-demarcator",
+                "sensitive" : false
+              },
+              "key-attribute-encoding" : {
+                "displayName" : "Key Attribute Encoding",
+                "identifiesControllerService" : false,
+                "name" : "key-attribute-encoding",
+                "sensitive" : false
+              }
+            },
+            "runDurationMillis" : 0,
+            "scheduledState" : "ENABLED",
+            "schedulingPeriod" : "0 sec",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "org.apache.nifi.processors.kafka.pubsub.PublishKafka",
+            "yieldDuration" : "1 sec"
+          }, {
+            "autoTerminatedRelationships" : [ "success" ],
+            "bulletinLevel" : "WARN",
+            "bundle" : {
+              "artifact" : "nifi-standard-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.11.4"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "ALL",
+            "groupIdentifier" : "90177c61-fc75-3ee1-8c00-315f5fbba948",
+            "identifier" : "7a3242ab-5819-38cb-8a84-168c269531e0",
+            "name" : "LogMessage",
+            "penaltyDuration" : "30 sec",
+            "position" : {
+              "x" : -1216.0,
+              "y" : 664.0
+            },
+            "properties" : {
+              "log-level" : "info"
+            },
+            "propertyDescriptors" : {
+              "log-message" : {
+                "displayName" : "Log message",
+                "identifiesControllerService" : false,
+                "name" : "log-message",
+                "sensitive" : false
+              },
+              "log-level" : {
+                "displayName" : "Log Level",
+                "identifiesControllerService" : false,
+                "name" : "log-level",
+                "sensitive" : false
+              },
+              "log-prefix" : {
+                "displayName" : "Log prefix",
+                "identifiesControllerService" : false,
+                "name" : "log-prefix",
+                "sensitive" : false
+              }
+            },
+            "runDurationMillis" : 0,
+            "scheduledState" : "ENABLED",
+            "schedulingPeriod" : "0 sec",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "org.apache.nifi.processors.standard.LogMessage",
+            "yieldDuration" : "1 sec"
+          } ],
+          "remoteProcessGroups" : [ ],
+          "variables" : { }
+        }, {
+          "comments" : "",
+          "componentType" : "PROCESS_GROUP",
+          "connections" : [ {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
               "groupId" : "a5751024-1bfd-3f71-93a4-1b99eacb109b",
               "id" : "ed0871a9-af6f-354b-8b11-6332485026d3",
               "name" : "TimesheetInput",
@@ -3126,14 +3593,14 @@
                   "group" : "org.apache.nifi",
                   "version" : "1.11.4"
                 },
-                "type" : "org.apache.nifi.ssl.RestrictedSSLContextService"
+                "type" : "org.apache.nifi.ssl.SSLContextService"
               }, {
                 "bundle" : {
                   "artifact" : "nifi-standard-services-api-nar",
                   "group" : "org.apache.nifi",
                   "version" : "1.11.4"
                 },
-                "type" : "org.apache.nifi.ssl.SSLContextService"
+                "type" : "org.apache.nifi.ssl.RestrictedSSLContextService"
               } ],
               "groupIdentifier" : "2f77c1f0-3e13-343a-8837-b8eee6a17ace",
               "identifier" : "f38ecd7b-38ee-31f1-a48a-0bea49617e25",
