@@ -4353,6 +4353,36 @@
             "destination" : {
               "comments" : "",
               "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
+              "id" : "9911b9e9-bd06-31e1-9a6c-d70dc8dbd39d",
+              "name" : "ConvertExcelToCSVProcessor",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
+            "identifier" : "8e4fb5a4-2ec2-341e-9c62-144934758728",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "success" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
+              "id" : "42eab463-ca95-3513-8330-b3d1f913660a",
+              "name" : "JsonToExcel",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
               "id" : "05e0d18d-360e-3908-b768-5165473b94d2",
               "name" : "SplitJson",
               "type" : "PROCESSOR"
@@ -4539,7 +4569,37 @@
             },
             "flowFileExpiration" : "0 sec",
             "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
-            "identifier" : "2bcbc917-5724-3272-a6e8-421202b135a8",
+            "identifier" : "1c34b9ac-ebc8-3451-b6c1-9e09aa11da78",
+            "labelIndex" : 1,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "success" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
+              "id" : "9911b9e9-bd06-31e1-9a6c-d70dc8dbd39d",
+              "name" : "ConvertExcelToCSVProcessor",
+              "type" : "PROCESSOR"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "35651218-6524-32af-90bf-d58d0837d7b5",
+              "id" : "00c84188-13be-33a3-b1e6-fe3928d81274",
+              "name" : "PutFile",
+              "type" : "PROCESSOR"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
+            "identifier" : "b8f86a2d-617f-31cf-91a0-6b39a8caa798",
             "labelIndex" : 1,
             "loadBalanceCompression" : "DO_NOT_COMPRESS",
             "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -4898,7 +4958,7 @@
             "name" : "PutFile",
             "penaltyDuration" : "30 sec",
             "position" : {
-              "x" : 656.0,
+              "x" : 864.0,
               "y" : 752.0
             },
             "properties" : {
@@ -4962,6 +5022,138 @@
             "schedulingStrategy" : "TIMER_DRIVEN",
             "style" : { },
             "type" : "org.apache.nifi.processors.standard.PutFile",
+            "yieldDuration" : "1 sec"
+          }, {
+            "autoTerminatedRelationships" : [ "original", "failure" ],
+            "bulletinLevel" : "WARN",
+            "bundle" : {
+              "artifact" : "nifi-poi-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.11.4"
+            },
+            "comments" : "",
+            "componentType" : "PROCESSOR",
+            "concurrentlySchedulableTaskCount" : 1,
+            "executionNode" : "ALL",
+            "groupIdentifier" : "35651218-6524-32af-90bf-d58d0837d7b5",
+            "identifier" : "9911b9e9-bd06-31e1-9a6c-d70dc8dbd39d",
+            "name" : "ConvertExcelToCSVProcessor",
+            "penaltyDuration" : "30 sec",
+            "position" : {
+              "x" : 528.0,
+              "y" : 960.0
+            },
+            "properties" : {
+              "excel-extract-first-row" : "0",
+              "CSV Format" : "custom",
+              "Quote Character" : "\"",
+              "Include Header Line" : "true",
+              "Value Separator" : ",",
+              "Record Separator" : "\\n",
+              "Escape Character" : "\\",
+              "excel-format-values" : "false",
+              "Trim Fields" : "true",
+              "Quote Mode" : "NONE",
+              "Include Trailing Delimiter" : "false"
+            },
+            "propertyDescriptors" : {
+              "excel-extract-first-row" : {
+                "displayName" : "Number of Rows to Skip",
+                "identifiesControllerService" : false,
+                "name" : "excel-extract-first-row",
+                "sensitive" : false
+              },
+              "excel-extract-column-to-skip" : {
+                "displayName" : "Columns To Skip",
+                "identifiesControllerService" : false,
+                "name" : "excel-extract-column-to-skip",
+                "sensitive" : false
+              },
+              "CSV Format" : {
+                "displayName" : "CSV Format",
+                "identifiesControllerService" : false,
+                "name" : "CSV Format",
+                "sensitive" : false
+              },
+              "Quote Character" : {
+                "displayName" : "Quote Character",
+                "identifiesControllerService" : false,
+                "name" : "Quote Character",
+                "sensitive" : false
+              },
+              "Include Header Line" : {
+                "displayName" : "Include Header Line",
+                "identifiesControllerService" : false,
+                "name" : "Include Header Line",
+                "sensitive" : false
+              },
+              "Value Separator" : {
+                "displayName" : "Value Separator",
+                "identifiesControllerService" : false,
+                "name" : "Value Separator",
+                "sensitive" : false
+              },
+              "Record Separator" : {
+                "displayName" : "Record Separator",
+                "identifiesControllerService" : false,
+                "name" : "Record Separator",
+                "sensitive" : false
+              },
+              "Escape Character" : {
+                "displayName" : "Escape Character",
+                "identifiesControllerService" : false,
+                "name" : "Escape Character",
+                "sensitive" : false
+              },
+              "extract-sheets" : {
+                "displayName" : "Sheets to Extract",
+                "identifiesControllerService" : false,
+                "name" : "extract-sheets",
+                "sensitive" : false
+              },
+              "excel-format-values" : {
+                "displayName" : "Format Cell Values",
+                "identifiesControllerService" : false,
+                "name" : "excel-format-values",
+                "sensitive" : false
+              },
+              "Null String" : {
+                "displayName" : "Null String",
+                "identifiesControllerService" : false,
+                "name" : "Null String",
+                "sensitive" : false
+              },
+              "Trim Fields" : {
+                "displayName" : "Trim Fields",
+                "identifiesControllerService" : false,
+                "name" : "Trim Fields",
+                "sensitive" : false
+              },
+              "Comment Marker" : {
+                "displayName" : "Comment Marker",
+                "identifiesControllerService" : false,
+                "name" : "Comment Marker",
+                "sensitive" : false
+              },
+              "Quote Mode" : {
+                "displayName" : "Quote Mode",
+                "identifiesControllerService" : false,
+                "name" : "Quote Mode",
+                "sensitive" : false
+              },
+              "Include Trailing Delimiter" : {
+                "displayName" : "Include Trailing Delimiter",
+                "identifiesControllerService" : false,
+                "name" : "Include Trailing Delimiter",
+                "sensitive" : false
+              }
+            },
+            "runDurationMillis" : 0,
+            "scheduledState" : "ENABLED",
+            "schedulingPeriod" : "0 sec",
+            "schedulingStrategy" : "TIMER_DRIVEN",
+            "style" : { },
+            "type" : "org.apache.nifi.processors.poi.ConvertExcelToCSVProcessor",
             "yieldDuration" : "1 sec"
           }, {
             "autoTerminatedRelationships" : [ "original", "failure" ],

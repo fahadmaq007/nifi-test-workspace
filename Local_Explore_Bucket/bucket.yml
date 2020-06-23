@@ -1,6 +1,6 @@
 flows:
-  1214f2aa-8a16-48e7-b5a5-a3b7fb3cdc83: {ver: 13, file: Local_explore_flow.snapshot,
-    comments: 'Added splitJson, changed scheduling parameters', author: anonymous,
-    created: 1592875683432, flowName: Local explore flow, flowDesc: ''}
+  1214f2aa-8a16-48e7-b5a5-a3b7fb3cdc83: {ver: 14, file: Local_explore_flow.snapshot,
+    comments: Added excelToCsv support, author: anonymous, created: 1592879238399,
+    flowName: Local explore flow, flowDesc: ''}
 layoutVer: 1
 bucketId: c91a0077-beb2-4583-a64a-feaef7e78358
