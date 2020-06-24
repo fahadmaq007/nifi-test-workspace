@@ -6318,6 +6318,36 @@
               "destination" : {
                 "comments" : "",
                 "groupId" : "1aecff87-18c7-3124-8585-b90a7c8c383a",
+                "id" : "f03a613e-ab7f-3db6-9282-3a1b15fac7b8",
+                "name" : "InvokeHTTP",
+                "type" : "PROCESSOR"
+              },
+              "flowFileExpiration" : "0 sec",
+              "groupIdentifier" : "1aecff87-18c7-3124-8585-b90a7c8c383a",
+              "identifier" : "b8e11c2d-d8a2-3d63-bb18-136a3df2b783",
+              "labelIndex" : 1,
+              "loadBalanceCompression" : "DO_NOT_COMPRESS",
+              "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+              "name" : "",
+              "partitioningAttribute" : "",
+              "prioritizers" : [ ],
+              "selectedRelationships" : [ "ValidateTransitObservations" ],
+              "source" : {
+                "comments" : "",
+                "groupId" : "1aecff87-18c7-3124-8585-b90a7c8c383a",
+                "id" : "b16a8bdf-a3fb-3ce9-ba45-d25e4aae6b99",
+                "name" : "RouteOnAttribute",
+                "type" : "PROCESSOR"
+              },
+              "zIndex" : 0
+            }, {
+              "backPressureDataSizeThreshold" : "1 GB",
+              "backPressureObjectThreshold" : 10000,
+              "bends" : [ ],
+              "componentType" : "CONNECTION",
+              "destination" : {
+                "comments" : "",
+                "groupId" : "1aecff87-18c7-3124-8585-b90a7c8c383a",
                 "id" : "294c4996-2417-3c63-a67f-7714ca730708",
                 "name" : "LogMessage",
                 "type" : "PROCESSOR"
@@ -6427,36 +6457,6 @@
                 "groupId" : "1aecff87-18c7-3124-8585-b90a7c8c383a",
                 "id" : "88a14161-b56f-39ce-85b6-21ec5e6426ea",
                 "name" : "ExtractGeoLocation",
-                "type" : "PROCESSOR"
-              },
-              "zIndex" : 0
-            }, {
-              "backPressureDataSizeThreshold" : "1 GB",
-              "backPressureObjectThreshold" : 10000,
-              "bends" : [ ],
-              "componentType" : "CONNECTION",
-              "destination" : {
-                "comments" : "",
-                "groupId" : "1aecff87-18c7-3124-8585-b90a7c8c383a",
-                "id" : "f03a613e-ab7f-3db6-9282-3a1b15fac7b8",
-                "name" : "InvokeHTTP",
-                "type" : "PROCESSOR"
-              },
-              "flowFileExpiration" : "0 sec",
-              "groupIdentifier" : "1aecff87-18c7-3124-8585-b90a7c8c383a",
-              "identifier" : "95df44f2-0fd6-3a69-a4b3-6bfa3ec7ce6b",
-              "labelIndex" : 1,
-              "loadBalanceCompression" : "DO_NOT_COMPRESS",
-              "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-              "name" : "",
-              "partitioningAttribute" : "",
-              "prioritizers" : [ ],
-              "selectedRelationships" : [ "ValidateTransitObservations" ],
-              "source" : {
-                "comments" : "",
-                "groupId" : "1aecff87-18c7-3124-8585-b90a7c8c383a",
-                "id" : "b16a8bdf-a3fb-3ce9-ba45-d25e4aae6b99",
-                "name" : "RouteOnAttribute",
                 "type" : "PROCESSOR"
               },
               "zIndex" : 0
@@ -6894,12 +6894,14 @@
               },
               "properties" : {
                 "Destination" : "flowfile-attribute",
-                "locationResponse" : "$.*",
-                "rate" : "$.rate",
+                "geo_address" : "$.results[0].formatted",
                 "Return Type" : "json",
+                "geo_city" : "$.results[0].components.city",
+                "geo_country" : "$.results[0].components.country",
+                "geo_state" : "$.results[0].components.state",
                 "Null Value Representation" : "the string 'null'",
-                "Path Not Found Behavior" : "ignore",
-                "geolocation" : "$.results[0].components"
+                "geo_postcode" : "$.results[0].components.postcode",
+                "Path Not Found Behavior" : "ignore"
               },
               "propertyDescriptors" : {
                 "Destination" : {
@@ -6908,16 +6910,10 @@
                   "name" : "Destination",
                   "sensitive" : false
                 },
-                "locationResponse" : {
-                  "displayName" : "locationResponse",
+                "geo_address" : {
+                  "displayName" : "geo_address",
                   "identifiesControllerService" : false,
-                  "name" : "locationResponse",
-                  "sensitive" : false
-                },
-                "rate" : {
-                  "displayName" : "rate",
-                  "identifiesControllerService" : false,
-                  "name" : "rate",
+                  "name" : "geo_address",
                   "sensitive" : false
                 },
                 "Return Type" : {
@@ -6926,22 +6922,40 @@
                   "name" : "Return Type",
                   "sensitive" : false
                 },
+                "geo_city" : {
+                  "displayName" : "geo_city",
+                  "identifiesControllerService" : false,
+                  "name" : "geo_city",
+                  "sensitive" : false
+                },
+                "geo_country" : {
+                  "displayName" : "geo_country",
+                  "identifiesControllerService" : false,
+                  "name" : "geo_country",
+                  "sensitive" : false
+                },
+                "geo_state" : {
+                  "displayName" : "geo_state",
+                  "identifiesControllerService" : false,
+                  "name" : "geo_state",
+                  "sensitive" : false
+                },
                 "Null Value Representation" : {
                   "displayName" : "Null Value Representation",
                   "identifiesControllerService" : false,
                   "name" : "Null Value Representation",
                   "sensitive" : false
                 },
+                "geo_postcode" : {
+                  "displayName" : "geo_postcode",
+                  "identifiesControllerService" : false,
+                  "name" : "geo_postcode",
+                  "sensitive" : false
+                },
                 "Path Not Found Behavior" : {
                   "displayName" : "Path Not Found Behavior",
                   "identifiesControllerService" : false,
                   "name" : "Path Not Found Behavior",
-                  "sensitive" : false
-                },
-                "geolocation" : {
-                  "displayName" : "geolocation",
-                  "identifiesControllerService" : false,
-                  "name" : "geolocation",
                   "sensitive" : false
                 }
               },
@@ -7623,9 +7637,10 @@
               "y" : 472.0
             },
             "properties" : {
+              "attributes-to-json-regex" : "(geo_.*)",
               "Destination" : "flowfile-content",
               "Null Value" : "false",
-              "Attributes List" : "lat,long,vehicleId,vehicleSpeed,travelDirection,geolocation",
+              "Attributes List" : "lat,long,vehicleId,vehicleSpeed,travelDirection",
               "Include Core Attributes" : "true"
             },
             "propertyDescriptors" : {
