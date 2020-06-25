@@ -6177,7 +6177,7 @@
           "identifier" : "93baaee6-d07a-395a-ad98-2ede80521d80",
           "inputPorts" : [ ],
           "labels" : [ ],
-          "name" : "Analyse Traffic Patterns",
+          "name" : "Analyse nextbus.com vehicle locations",
           "outputPorts" : [ ],
           "parameterContextName" : "Local Context",
           "position" : {
@@ -7651,8 +7651,8 @@
               "name" : "InvokeHTTP",
               "penaltyDuration" : "30 sec",
               "position" : {
-                "x" : 128.0,
-                "y" : -176.0
+                "x" : -72.0,
+                "y" : -184.0
               },
               "properties" : {
                 "use-etag" : "false",
@@ -7868,8 +7868,8 @@
               "name" : "EvaluateJsonPath",
               "penaltyDuration" : "30 sec",
               "position" : {
-                "x" : 600.0,
-                "y" : -304.0
+                "x" : 520.0,
+                "y" : -344.0
               },
               "properties" : {
                 "lastTime" : "$.lastTime",
@@ -8021,8 +8021,8 @@
               "name" : "PutFile",
               "penaltyDuration" : "30 sec",
               "position" : {
-                "x" : 928.0,
-                "y" : 96.0
+                "x" : 792.0,
+                "y" : 64.0
               },
               "properties" : {
                 "Create Missing Directories" : "true",
@@ -8153,8 +8153,8 @@
               "name" : "AttributesToJSON",
               "penaltyDuration" : "30 sec",
               "position" : {
-                "x" : -72.0,
-                "y" : 1143.727294921875
+                "x" : -96.0,
+                "y" : 1264.0
               },
               "properties" : {
                 "Destination" : "flowfile-content",
@@ -8218,8 +8218,8 @@
               "name" : "UpdateAttribute",
               "penaltyDuration" : "30 sec",
               "position" : {
-                "x" : 880.0,
-                "y" : -120.0
+                "x" : 784.0,
+                "y" : -152.0
               },
               "properties" : {
                 "filename" : "vehicle-loc-${now():format(\"hhMMss\")}.xml",
@@ -8327,8 +8327,8 @@
               "name" : "UpdateAttribute",
               "penaltyDuration" : "30 sec",
               "position" : {
-                "x" : 472.0,
-                "y" : 1159.727294921875
+                "x" : 520.0,
+                "y" : 1216.0
               },
               "properties" : {
                 "filename" : "${lastTimeFile}",
@@ -8391,8 +8391,8 @@
               "name" : "ExtractLastTime",
               "penaltyDuration" : "30 sec",
               "position" : {
-                "x" : 136.0,
-                "y" : 24.0
+                "x" : -72.0,
+                "y" : 16.0
               },
               "properties" : {
                 "lastTime" : "//body/lastTime/@time\n",
@@ -8450,8 +8450,8 @@
               "name" : "PutElasticsearchHttp",
               "penaltyDuration" : "30 sec",
               "position" : {
-                "x" : -72.0,
-                "y" : 963.8636474609375
+                "x" : -104.0,
+                "y" : 1072.0
               },
               "properties" : {
                 "elasticsearch-http-response-timeout" : "15 secs",
@@ -8592,7 +8592,7 @@
               "name" : "GetFile",
               "penaltyDuration" : "30 sec",
               "position" : {
-                "x" : 128.0,
+                "x" : -72.0,
                 "y" : -376.0
               },
               "properties" : {
@@ -8704,8 +8704,8 @@
               "name" : "PutFile",
               "penaltyDuration" : "30 sec",
               "position" : {
-                "x" : 460.8461003262887,
-                "y" : 997.7121966128523
+                "x" : 512.0,
+                "y" : 1008.0
               },
               "properties" : {
                 "Create Missing Directories" : "true",
@@ -8786,8 +8786,8 @@
               "name" : "AttributesToJSON",
               "penaltyDuration" : "30 sec",
               "position" : {
-                "x" : -80.0,
-                "y" : 792.0
+                "x" : -104.0,
+                "y" : 888.0
               },
               "properties" : {
                 "attributes-to-json-regex" : "(geo_.*)",
@@ -8853,7 +8853,7 @@
               "penaltyDuration" : "30 sec",
               "position" : {
                 "x" : -72.0,
-                "y" : 232.0
+                "y" : 216.0
               },
               "properties" : {
                 "Split Depth" : "1"
@@ -8890,8 +8890,8 @@
               "name" : "UpdateAttribute",
               "penaltyDuration" : "30 sec",
               "position" : {
-                "x" : -424.0,
-                "y" : 720.0
+                "x" : -104.0,
+                "y" : 728.0
               },
               "properties" : {
                 "lastTime" : "${lastTime}",
