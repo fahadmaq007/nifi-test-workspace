@@ -3796,14 +3796,14 @@
                   "group" : "org.apache.nifi",
                   "version" : "1.11.4"
                 },
-                "type" : "org.apache.nifi.ssl.RestrictedSSLContextService"
+                "type" : "org.apache.nifi.ssl.SSLContextService"
               }, {
                 "bundle" : {
                   "artifact" : "nifi-standard-services-api-nar",
                   "group" : "org.apache.nifi",
                   "version" : "1.11.4"
                 },
-                "type" : "org.apache.nifi.ssl.SSLContextService"
+                "type" : "org.apache.nifi.ssl.RestrictedSSLContextService"
               } ],
               "groupIdentifier" : "2f77c1f0-3e13-343a-8837-b8eee6a17ace",
               "identifier" : "f38ecd7b-38ee-31f1-a48a-0bea49617e25",
@@ -6433,8 +6433,8 @@
               "type" : "OUTPUT_PORT"
             } ],
             "position" : {
-              "x" : -464.0,
-              "y" : 280.0
+              "x" : -1040.0,
+              "y" : 216.0
             },
             "processGroups" : [ ],
             "processors" : [ {
@@ -7626,12 +7626,12 @@
             "identifier" : "5ac818a7-c73f-3137-bd75-6fcc9d976d24",
             "inputPorts" : [ ],
             "labels" : [ ],
-            "name" : "ExtractVehicleLocationAttributes",
+            "name" : "ExtractLiveBusLocations",
             "outputPorts" : [ ],
             "parameterContextName" : "Local Context",
             "position" : {
-              "x" : 112.0,
-              "y" : -24.0
+              "x" : -400.0,
+              "y" : 208.0
             },
             "processGroups" : [ ],
             "processors" : [ {
@@ -7940,7 +7940,10 @@
               "properties" : {
                 "Destination" : "flowfile-attribute",
                 "vehicleSpeed" : "//vehicle/@speedKmHr",
+                "routeTag" : "//vehicle/@routeTag",
                 "travelDirection" : "//vehicle/@dirTag",
+                "heading" : "//vehicle/@heading",
+                "predictable" : "//vehicle/@predictable",
                 "Return Type" : "auto-detect",
                 "vehicleId" : "//vehicle/@id",
                 "long" : "//vehicle/@lon",
@@ -7960,10 +7963,28 @@
                   "name" : "vehicleSpeed",
                   "sensitive" : false
                 },
+                "routeTag" : {
+                  "displayName" : "routeTag",
+                  "identifiesControllerService" : false,
+                  "name" : "routeTag",
+                  "sensitive" : false
+                },
                 "travelDirection" : {
                   "displayName" : "travelDirection",
                   "identifiesControllerService" : false,
                   "name" : "travelDirection",
+                  "sensitive" : false
+                },
+                "heading" : {
+                  "displayName" : "heading",
+                  "identifiesControllerService" : false,
+                  "name" : "heading",
+                  "sensitive" : false
+                },
+                "predictable" : {
+                  "displayName" : "predictable",
+                  "identifiesControllerService" : false,
+                  "name" : "predictable",
                   "sensitive" : false
                 },
                 "Return Type" : {
@@ -8793,7 +8814,7 @@
                 "attributes-to-json-regex" : "(geo_.*)",
                 "Destination" : "flowfile-content",
                 "Null Value" : "false",
-                "Attributes List" : "uuid,lat,long,vehicleId,vehicleSpeed,travelDirection,_doc",
+                "Attributes List" : "uuid,lat,long,vehicleId,vehicleSpeed,travelDirection,predictable,routeTag,heading",
                 "Include Core Attributes" : "true"
               },
               "propertyDescriptors" : {
@@ -9424,11 +9445,11 @@
             "identifier" : "8e95be65-8023-3ce9-8372-1f16ca365745",
             "inputPorts" : [ ],
             "labels" : [ ],
-            "name" : "ExtractRouteConfigAttributes",
+            "name" : "ExtractRouteStops",
             "outputPorts" : [ ],
             "parameterContextName" : "Local Context",
             "position" : {
-              "x" : -440.0,
+              "x" : -400.0,
               "y" : -16.0
             },
             "processGroups" : [ ],
